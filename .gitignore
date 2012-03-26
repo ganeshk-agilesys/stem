@@ -1,0 +1,25 @@
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+log/*
+db/*.db
+db/*.sqlite3
+db/schema.rb
+tmp/**/*
+tmp/*
+.DS_Store
+**/.DS_Store
+doc/*
+*.tmproj
+coverage/
+features_rcov/
+public/javascripts/all.js
+.bundle
+nbproject/
