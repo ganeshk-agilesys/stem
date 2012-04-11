@@ -1,7 +1,7 @@
 class AssessmentController < ApplicationController
   def index
     #    begin
-    response = open URI.escape("http://127.0.0.1:3000/api/v1/assessment.json")
+    response = open URI.escape("http://23.21.178.16/api/v1/assessment.json")
     #    raise JSON.parse(response.read).inspect
     @questions = JSON.parse(response.read)
     @riasec = ""
@@ -21,7 +21,7 @@ class AssessmentController < ApplicationController
       @skills << (params["skill_question_#{num}".to_sym] || "0")
     end
     if @riasec =~ /^[1-5]{6}$/ and @skills =~ /^[1-5]{8}$/
-      @response = JSON.parse(open(URI.escape("http://127.0.0.1:3000/api/v1/careers/#{@riasec}/#{@skills}.json")).read)
+      @response = JSON.parse(open(URI.escape("http://23.21.178.16/api/v1/careers/#{@riasec}/#{@skills}.json")).read)
       
     else
       flash[:error] = "Please answer all questions"
