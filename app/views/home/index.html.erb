@@ -1,0 +1,65 @@
+<div class="wrapperbanr">
+  <!--Banner starts-->
+  <div class="banr_continer">
+    <div class="banr"> <%= image_tag "baner_image.png", :width => "620", :height => "300" %></div>
+    <div class="bnr_scnd"><a href="#">
+        <div class="linkbnr"></div>
+      </a><a href="#">
+        <div class="linkbnr2"></div>
+      </a></div>
+  </div>
+  <div class="features_wrpr">
+    <div class="features_tabs span-201">
+      <div style="float:left; "><%= image_tag "STEM_10.png", :width=>"22",:height=>"22" %></div>
+      <h2>Assess</h2>
+      <h3>&nbsp;Yourself</h3>
+      <p>Take our simple 14-question self assessment to find out which careers match you. </p>
+      <div ><%= link_to "Assess Yourself »", assessment_index_path, :class => "linkbtm" %></div>
+    </div>
+    <div class="features_tabs span-201">
+      <div style="float:left; "><%= image_tag "STEM_12.png", :width=>"22",:height=>"22" %></div>
+      <h2>Explore</h2>
+      <h3>&nbsp;Careers</h3>
+      <p>Not sure what you want to do? Explore and learn about the many career options featured on Pipeline. </p>
+      <div ><%= link_to "Explore Careers »", search_career_index_path, :class => "linkbtm" %></div>
+    </div>
+    <div class="features_tabs span-201">
+      <div style="float:left; "><%= image_tag "STEM_14.png", :width=>"22",:height=>"22" %></div>
+      <h2>Find</h2>
+      <h3>&nbsp;Resources</h3>
+      <p>Need additional information? Check out these resources dedicated to STEM careers. </p>
+      <div ><a href="#" class="linkbtm">Find STEM Resources »</a></div>
+    </div>
+    <div class="features_tabs span-201" style="margin-right:0px !important;">
+      <div style="float:left; "><%= image_tag "STEM_17.png", :width=>"22",:height=>"22" %></div>
+      <h2>Connect</h2>
+      <h3>&nbsp;with Jobs</h3>
+      <p>Know what you’re looking for? Search for real job openings that are available today! </p>
+      <div ><%= link_to "Connect with Jobs »", job_search_path, :class => "linkbtm" %></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="span-46">
+    <div class="inner_wrapperleft"> <span class="headingtxt">Welcome to STEMCareers</span><span class="cont" style="margin-top:10px;">A resource to learn all about STEM Careers, Educational Requirements, and Jobs that you may be interested in.</span>
+      <p style="margin-top:16px;margin-bottom:28px;"><a href="#"><%= image_tag "get_started_btn.jpg", :width=>"178", :height=>"39"  %></a></p>
+      <div class="btm_cont"><span>Did you know...</span>
+        <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Caree r Awareness as a topic that would help them to prepare students for STEM careers.</p>
+        <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>
+      </div>
+    </div>
+    <div class="inner_wrapperrght"><%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :style => "position:relative; "%>
+
+
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div style="float:left; width:100%;">
+    <div class="brder">&nbsp;</div>
+    <div class="ourpartnr">Our Partners</div>
+    <div class="brder">&nbsp;</div>
+  </div>
+  <div class="logos" >
+    <%= image_tag "cisco.png", :width=>"93", :height=>"82"%><%= image_tag "futures.png", :width=>"221", :height=>"82"%><%= image_tag "communicatio.png", :width=>"177", :height=>"82" , :style=>"margin-right:0px !important;"%>
+  </div>
+  <div class="clear"></div>
+</div>

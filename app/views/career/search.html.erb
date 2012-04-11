@@ -1,0 +1,61 @@
+
+<div class="wrapperbanr">
+  <h2>Explore the Career Paths</h2>
+  <hr />
+  <div class="span-46 last">
+    <div class="span-34 prepend-top">
+      <div class="span-33 half_padding box2 bg_srccar rounded_box search">
+        <%= form_tag(search_result_career_index_path, :method => :get) do |f| -%>
+          <%= hidden_field_tag "search","" %>
+          <h1 class="column span-33 last title bold">Search for Careers</h1>
+          <div class="span-33 last append-bottom bold">By Keyword or Military Occupation (MOC)</div>
+          <div class="span-18 inline_inputs">
+            <%= text_field_tag(:q) %>
+          </div>
+          <div class="span-15 last inline_inputs">
+            <%= submit_tag "",:class => "btn_carrer"  %>
+          </div>
+        <%- end -%>
+      </div>
+      <div class="shdw"></div>
+      <div class="span-33 half_padding">
+        <h1 class="column span-33 last title">Browse Career Paths by Industry</h1>
+        <hr/>
+        <div class="span-33 last prepend-top">
+          <% unless @industries.blank? %>
+            <%- @industries.each do |industry| -%>
+              <div class="span-11 append-bottom <%= cycle('', '', 'last') %>">
+                <div class="column"><%= image_tag industry["image_url"].gsub('normal','medium_small') %></div>
+                <div class="span-9 last bold"><%= industry["name"] %></div>
+                <div class="span-9 last"> 
+                  <%= link_to t(:career_paths), search_result_career_index_path(:search => { :industry_id => industry["id"] }), :title => t(:industry_alt_text, :industry_name => industry["name"]) %> |
+                  <%= link_to t(:learn_more), industry_path(industry), :title => t(:industry_alt_text, :industry_name => industry["name"]) %>
+                </div>
+              </div>
+            <%- end -%>
+          <%- end -%>
+        </div>
+      </div>
+    </div>
+    <div class="span-11 last prepend-top push-left">
+      <div class="span-11 last box2 rounded_box grdt_rght">
+        <div class="span-10 last half_padding sidebar">
+          <div >
+            <div class="intro">Not sure where to start ?</div>
+            <h3>Take a career Assessment</h3>
+            <div style="clear:both;"></div>
+            <p>STEM Careers quick 14 question career assessment will help to identify your top 50 careers path.</p>
+            <div style="text-align:center;width:194px; margin:10px 38px 0px; clear:both;"><%= link_to "", assessment_index_path, :class => "btn_tkeasse" %></div>
+            <div class="clear"><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clear"><br />
+    </div>
+  </div>
+  <div class="clear"><br />
+  </div>
+</div>
+

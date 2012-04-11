@@ -1,0 +1,67 @@
+<%- if !@occupations.empty? -%>
+  <%- @occupations.each do |occupation| -%>
+  <div class="span-35 last prepend-top">
+    <div class="span-35 last header">
+      <span class="column"><%= link_to occupation.title, occupation_path(occupation) %></span>
+      <%- if occupation.top_100? -%>
+      <span class="column blue_tag"><%= t(:top_100) %></span>
+      <%- end -%>
+      <%- if !occupation.stem_names.empty? -%>
+      <span class="column last green_tag"><%= t(:stem) %></span>
+      <%- end -%>
+    </div>
+    <%- if occupation.average_national_salary or occupation.education_level -%>
+      <ul class="column span-35 last horizontal_info_list bold" style="margin:5px 0 0">
+        <%- if occupation.average_national_salary -%>
+          <li><%= t(:average_national_salary) %>: <%= number_to_currency(occupation.average_national_salary, :precision => 0) %></li>
+        <%- end -%>
+        <%- if occupation.state_salary(@state) -%>
+          <li><%= t(:average)%> <%= @state %> <%= t(:salary) %>: <%= number_to_currency(occupation.state_salary(@state).average_salary, :precision => 0) %></li>
+        <%- end -%>
+        <%- if occupation.education_level -%>
+          <li><%= t(:education) %>: <%= t(occupation.education_level) %></li>
+        <%- end -%>
+      </ul>
+    <%- end -%>
+    <div class="span-35 last" style="margin:5px 0 0">
+      <%= truncate(occupation.description, :length => 250) %>
+    </div>
+    <%- if occupation.projected_national_openings or occupation.annual_national_growth -%>
+      <ul class="column span-35 last horizontal_info_list quiet" style="margin:5px 0 0">
+        <%- if occupation.projected_national_openings -%>
+          <li><%= t(:projected_openings) %>: <%= number_with_delimiter(occupation.projected_national_openings, :precision => 0) %></li>
+        <%- end -%>
+        <%- if occupation.annual_national_growth -%>
+          <li><%= t(:annual_growth_rate) %>: <%= number_with_delimiter(occupation.annual_national_growth, :precision => 0) %>%</li>
+        <%- end -%>
+      </ul>
+    <%- end -%>
+    <%- if !occupation.industries.empty? -%>
+      <ul class="column span-35 last horizontal_info_list quiet" style="margin:5px 0 0">
+        <li>
+          <%= t(:industry) %>:
+          <%- occupation.industries.each do |i| -%>
+            <%= link_to i.name, i.published? ? industry_path(i) : industry_path(i.parent_industry) %>
+          <%- end -%>
+        </li>
+      </ul>    
+    <%- end -%>
+    <div class="span-35 last" style="margin:5px 0">
+      <%= link_to t(:view_jobs_for, {:job => occupation.title }), search_job_posts_path(:search => { 'keywords' => "onet:(#{occupation.short_soc_code})", 'location' => site_state }) %>
+    </div>
+  </div>
+  <%- end -%>
+  <div class="span-35 last append-bottom">
+    <div id="pagination" class="inline_inputs right last"><%= will_paginate @occupations %></div>
+  </div>
+<%- else -%>
+  <div class="span-35 push_text_center box2" style="background: transparent <%= asset_path('icons/ic_magnifying.png') %> no-repeat center center; height: 250px">
+    <div class="span-30 append-8 prepend-2" style="margin-top: 9em;">
+      <span><b><%= t(:no_results) %></b></span>
+    </div>
+  </div>
+<%- end -%>
+
+<hr class="auto" />
+<div class="left"><%= image_tag("icons/onet.jpg", :class => "logo") %></div>
+<div class="left"><span class="tinytext"><%= t(:national_data_source) %><br/><%= t(:state_data_source) %></span></div>

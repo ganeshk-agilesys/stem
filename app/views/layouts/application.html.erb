@@ -1,14 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Stem</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <%= stylesheet_link_tag    "application","style","blueprint/grid", :media => "all" %>
+    <%= javascript_include_tag "application","jquery-ui.min" %>
+    <%= yield(:head) %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+      <%- if content_for?(:title) -%>
+        <%= yield(:title) %>
+      <%- else -%>
+        <%= "Welcome to STEMCareers"%>
+      <%- end -%>
+    </title>
+  </head>
 
-<%= yield %>
-
-</body>
+  <body>
+    <div class="bgtp"></div>
+    <!--Header starts-->
+    <div class="whtbg">
+      <div class="wrappermain">
+        <div class="logo"></div>
+        <!--Navigation starts-->
+        <div class="nav">
+          <ul>
+            <li><a href="#"><span>Home</span></a></li>
+            <li><a href="#"><span>About</span></a></li>
+            <li><a href="#"><span>Assess Yourself</span></a></li>
+            <li><a href="#"><span>Careers</span></a></li>
+            <li><a href="#"><span>Resources</span></a></li>
+            <li><a href="#"><span>Jobs</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="orng_bg">
+      <!--Main container starts-->
+      <%= yield %>
+      <!--End of Main container-->
+      <!--Footer starts-->
+      <%= render "layouts/footer" %>
+    </div>
+  </body>
 </html>

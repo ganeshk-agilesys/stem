@@ -1,0 +1,122 @@
+<div class="span-47">
+  <div class="span-13">
+    <div class="box_light_grey span-13 last">
+      <h2><%= t(:industry_categories) %></h2>
+      <ul class="side_nav">
+        <% raise @industry_list.inspect %>
+        
+        <%- @industry_list.each do |industry| %>
+        
+          <li>
+            <%= link_to_unless_current industry["sub_name"], industry_path(:id =>industry["sub_id"]) do %>
+              <div><span><%=industry["sub_name"]%></span></div>
+            <%- end -%>
+          </li>
+        <%- end -%>
+      </ul>
+    </div>
+    <%- unless @careers.empty? -%>
+      <div class="span-13 last prepend-top">
+        <div class="span-13 last grey_header">
+          <h2><%= t(:top_careers) %></h2>
+        </div>
+        <ul class="blue_arrow span-13 last">
+          <%- @careers.each do |career| -%>
+            <li class="span-13 last"><%= link_to truncate(career["title"], :length => 38), "javascript:void(0);", :title => h(career["title"]) %></li>
+          <%- end -%>
+        </ul>
+      </div>
+    <%- end -%>
+    <%- unless @video.blank? -%>
+      <div class="span-13 last prepend-top">
+        <div class="span-13 last grey_header">
+          <h2><%= t(:ditl) %></h2>
+        </div>
+        <%= video_player_dialog("video_player", @video.title, @video) %>
+        <div class="column span-13" style="position: relative; cursor: pointer;", title="<%= @video.title %>" onclick="return dialog('video_player', { width: '500px', height: '410px' });">
+        <%= image_tag @video.thumbnail_url, :alt => @video.title, :width => "255", :class => "overlay" %>
+        <%= image_tag "dialog/play.png", :alt => @video.title, :style => "position: absolute; top: 65px; left: 110px;" %>
+      </div>
+    </div>
+  <%- end -%>
+<%#- unless @industry.communities.for_blank_states_or(site_state).empty? -%>
+<%#*<div class="span-13 last prepend-top">%>
+<%#*<div class="span-13 last grey_header">%>
+<%#*<h2>%>
+<%#= t(:related_communities) %>
+<%#*</h2>%>
+<%#*</div>%>
+<%#- @industry.communities.for_blank_states_or(site_state).limit(8).each do |community| -%>
+<%#*<div class="span-12 last prepend-1">%>
+<%#*<div class="span-3">%>
+<%#= image_tag community.logo.url(:medium) %>
+<%#*</div>%>
+<%#*<div class="span-9 last"><%= link_to truncate(community.name, :length => 80), community_path(community), :title => h(community.name), :class => "actionLinkTitle" %><br />%>
+<%#*<span class="small quiet">%>
+<%#= t(:count_members, :count => community.users.size) %>
+<%#*</span>%>
+<%#*</div>%>
+<%#*</div>%>
+<%#- end -%>
+<%#*</div>%>
+<%#- end -%>
+<%#- unless @links.empty? -%>
+<%#*<div class="span-13 last prepend-top">%>
+<%#*<div class="span-13 last grey_header">%>
+<%#*<h2>%>
+<%#= h(t(:industry_links)) %>
+<%#*</h2>%>
+<%#*</div>%>
+<%#*<ul class="blue_arrow span-13 last">%>
+<%#- @links.each do |link| -%>
+<%#*<li class="span-13 last">%>
+<%#= link_to truncate(link.name, :length => 38), url_encode(link.link), :title => h(link.name), :target => "_blank" %>
+<%#*</li>%>
+<%#- end -%>
+<%#*</ul>%>
+<%#*</div>%>
+<%#- end -%>
+<%#*<div class="right prepend-top">%>
+<%#= render 'common/add_this' %>
+<%#*</div>%>
+</div>
+<div class="span-33 last prepend-1">
+  <div class="span-33 last">
+    <%= image_tag @industry["image_url"].gsub('normal','large') %>
+  </div>
+  <div class="span-33 last">
+    <h2 class="signup half_vertical_padding"><%= @industry["name"] %></h2>
+    <%- unless @industry["description"].blank? -%>
+      <span><%= @industry["description"] %></span>
+    <%- end -%>
+  </div>
+<%#*<div class="span-32 last half_padding box_light_grey prepend-top">%>
+<%#*<h2 class="signup">%>
+<%#= t(:industry_education) %>
+<%#*</h2>%>
+<%#*<div class="span-20 industry_education">%>
+<%#= markdown(@education) %>
+<%#*</div>%>
+<%#*<div class="span-11 last prepend-1">%>
+<%#*<div class="span-10 last box_dark_blue half_padding">%>
+<%#*<h2>%>
+<%#= t(:did_you_know) %>
+<%#*</h2>%>
+<%#*<div id="slideshow" class="span-10 last" style="height: 165px">%>
+<%#- @quickfacts.each do |q| -%>
+<%#*<div class="span-10 last half_vertical_padding">%>
+<%#*<span>%>
+<%#*<em>%>
+<%#= q.quickfact %>
+<%#*</em>%>
+<%#*</span>%>
+<%#*</div>%>
+<%#- end -%>
+<%#*</div>%>
+<%#*</div>%>
+<%#*</div>%>
+<%#*</div>%>
+</div>
+</div>
+
+<%#= render :partial => '/industries/company_logos' %>

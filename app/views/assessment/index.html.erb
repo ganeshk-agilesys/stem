@@ -1,0 +1,51 @@
+<div class="wrapperbanr">
+  <h2 >Career Assesment</h2><div class="brder" style="width:100%;"></div>
+  <%= form_tag(:action => "assessment_result") do  %>
+    <div class="inner_wrapperleft push-last span-200" >
+      <div class="top_bnr">Answer Thesee 14 questions to learn what careers might best match your skills and interests .It should only take a few minutes .Don’t Think too hard about your answers .Go with your first choice</div>
+      <div class="assess">
+        <% if @questions.present? %>
+
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+            <% @questions.each_with_index do |q,i| %>
+              <tr class="<%= cycle('even','') %>">
+                <td width="10%"><%=i+1%>.</td>
+                <td width="90%">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td colspan="5"><b><%= q["text"] %></b></td>
+                    </tr>
+                    <tr>
+                      <% q["answers"].each_with_index do |a,j| %>
+                        <td>
+                          <%= radio_button_tag "skill_question_#{i+1}","#{j+1}", ((i >= 5) ? @riasec[j] == "#{j+1}" : @skills[j] == "#{j+1}") %> 
+                          <%= label_tag "skill_question_label#{i+1}_#{j+1}", q["answers"][j]["text"] %>
+                        </td>
+                      <% end %>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+
+        <% end %>
+      </div>
+      <div style="margin-top:20px;" ><%= submit_tag "",:class=>"btn_crslt" %></div>
+    </div>
+
+    <div class="inner_wrapperrght" style="margin-left:0px;">
+      <div class="rght_bnr">
+        <h3>How are your career matches determined?</h3>
+        <p class="asses_cont_rght">Answer Thesee 14 questions to learn what careers might best match your skills and interests .It should only take a few minutes .Don’t Think too hard about your answers .Go with your first choice</p>
+        <ul class="list_rght">
+          <li> with your first choice</li>
+          <li>with your first choice</li>
+          <li> with your first choice</li>
+        </ul>
+        <p class="asses_cont_rght">Answer Thesee 14 questions to learn what careers might best match your skills and interests .It should only take a few minutes .Don’t Think too hard about your answers .Go with your first choice</p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+</div>

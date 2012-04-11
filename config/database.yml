@@ -9,7 +9,7 @@ development:
   username: root
   password: 
   host: localhost
-  socket: /opt/local/var/run/mysql5/mysqld.sock  
+# socket: /opt/local/var/run/mysql5/mysqld.sock  
   pool: 5
   timeout: 5000
 

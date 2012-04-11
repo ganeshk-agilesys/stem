@@ -1,4 +1,8 @@
 Stem::Application.routes.draw do
+  get "job/search"
+
+  get "job/search_result"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +52,23 @@ Stem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  
+  root :to => 'home#index'
+  resources :assessment, :only => [:index] do
+    collection do
+      post :assessment_result
+    end
+  end
+  
+  resources :career, :only => [] do
+    collection do
+      get :search
+      get :search_result
+    end
+  end
+  
+  resources :industry, :only => [:index, :show]
+  
 
   # See how all your routes lay out with "rake routes"
 
