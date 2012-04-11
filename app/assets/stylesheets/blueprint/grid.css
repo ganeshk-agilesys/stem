@@ -22,17 +22,18 @@
 -------------------------------------------------------------- */
 
 /* Sets up basic grid floating and margin. */
-.column, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24, span-33, .span-34, .span-46, .span-201, .span-202 {
+.column, .span-00, .span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18, .span-19, .span-20, .span-21, .span-22, .span-23, .span-24, span-33, .span-34, .span-35,  .span-46, .span-201, .span-202 {
   float: left;
   margin-right: 5px;
 }
-
+.fl{ float: left;}
+.rt{ float:right;}
 /* The last column in a row needs this class. */
 .last { margin-right: 0; }
 
 /* Use these classes to set the width of a column. */
+.span-00{ width:100%;}
 .span-1 {width: 30px;}
-
 .span-2 {width: 70px;}
 .span-3 {width: 110px;}
 .span-4 {width: 150px;}
@@ -58,10 +59,16 @@
 .span-24 {width:950px; margin-right:0;}
 .span-33  {width:655px; }
 .span-34  {width:675px; }
+.span-35 {
+    width: 675px;
+}
 .span-46 {width: 915px;}
 .span-200{width: 677px;}
 .span-201 {width:200px;}
 .span-202 {width:315px;}
+.span-203 { width:130px;}
+.span-204 { width:240px;}
+.span-205{width:580px;}
 
 /* Use these classes to set the width of an input. */
 input.span-1, textarea.span-1, input.span-2, textarea.span-2, input.span-3, textarea.span-3, input.span-4, textarea.span-4, input.span-5, textarea.span-5, input.span-6, textarea.span-6, input.span-7, textarea.span-7, input.span-8, textarea.span-8, input.span-9, textarea.span-9, input.span-10, textarea.span-10, input.span-11, textarea.span-11, input.span-12, textarea.span-12, input.span-13, textarea.span-13, input.span-14, textarea.span-14, input.span-15, textarea.span-15, input.span-16, textarea.span-16, input.span-17, textarea.span-17, input.span-18, textarea.span-18, input.span-19, textarea.span-19, input.span-20, textarea.span-20, input.span-21, textarea.span-21, input.span-22, textarea.span-22, input.span-23, textarea.span-23, input.span-24, textarea.span-24 {
@@ -147,7 +154,7 @@ input.span-24, textarea.span-24 { width: 938px; }
 .prepend-21 { padding-left: 840px;}
 .prepend-22 { padding-left: 880px;}
 .prepend-23 { padding-left: 920px;}
-
+.prepend-last{padding-left:0px !important; }
 
 /* Border on right hand side of a column. */
 .border {
@@ -192,7 +199,7 @@ next column, or to pull it into the previous column.  */
 .pull-22 { margin-left: -880px; }
 .pull-23 { margin-left: -920px; }
 .pull-24 { margin-left: -960px; }
-
+.pull-R {margin-right:18px !important}
 .pull-1, .pull-2, .pull-3, .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12, .pull-13, .pull-14, .pull-15, .pull-16, .pull-17, .pull-18, .pull-19, .pull-20, .pull-21, .pull-22, .pull-23, .pull-24 {float: left; position:relative;}
 
 
@@ -222,7 +229,7 @@ next column, or to pull it into the previous column.  */
 .push-24 { margin: 0 -960px 1.5em 960px; }
 .push-left{margin-left:12px;}
 .push-top {margin-top:0px !important;}
-.push-last{margin-left:0px;}
+.push-last{margin-left:0px !important;}
 
 .push-1, .push-2, .push-3, .push-4, .push-5, .push-6, .push-7, .push-8, .push-9, .push-10, .push-11, .push-12, .push-13, .push-14, .push-15, .push-16, .push-17, .push-18, .push-19, .push-20, .push-21, .push-22, .push-23, .push-24 {float: left; position:relative;}
 
@@ -263,6 +270,12 @@ hr.space {
   visibility: hidden;
 }
 
+.space3 {
+    display: block;
+    height: 1px;
+    margin: 8px 0;
+    width: 100%;
+}
 
 /* Clearing floats without extra markup
    Based on How To Clear Floats Without Structural Markup by PiE
@@ -282,3 +295,4 @@ hr.space {
    apply to column that should drop below previous ones. */
 
 .clear { clear:both; }
+.font1{font-size:12px;}

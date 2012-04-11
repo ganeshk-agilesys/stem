@@ -2,11 +2,14 @@
   <!--Banner starts-->
   <div class="banr_continer">
     <div class="banr"> <%= image_tag "baner_image.png", :width => "620", :height => "300" %></div>
-    <div class="bnr_scnd"><a href="#">
+    <div class="bnr_scnd">
+      <a href="<%=assessment_index_path%>">
         <div class="linkbnr"></div>
-      </a><a href="#">
+      </a>
+      <a href="#">
         <div class="linkbnr2"></div>
-      </a></div>
+      </a>
+    </div>
   </div>
   <div class="features_wrpr">
     <div class="features_tabs span-201">
@@ -41,7 +44,7 @@
   <div class="clear"></div>
   <div class="span-46">
     <div class="inner_wrapperleft"> <span class="headingtxt">Welcome to STEMCareers</span><span class="cont" style="margin-top:10px;">A resource to learn all about STEM Careers, Educational Requirements, and Jobs that you may be interested in.</span>
-      <p style="margin-top:16px;margin-bottom:28px;"><a href="#"><%= image_tag "get_started_btn.jpg", :width=>"178", :height=>"39"  %></a></p>
+      <p style="margin-top:16px;margin-bottom:28px;"><a href="<%=assessment_index_path%>"><%= image_tag "get_started_btn.jpg", :width=>"178", :height=>"39"  %></a></p>
       <div class="btm_cont"><span>Did you know...</span>
         <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Caree r Awareness as a topic that would help them to prepare students for STEM careers.</p>
         <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>

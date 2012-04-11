@@ -605,3 +605,78 @@ h1.title {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
+.srcbg .linkbtm {
+	color:#f76002;
+	float:right;
+	font-family:HelveticaBold;
+}
+.srcbg p {
+	font-family:'HelveticaMedium', Arial;
+	color:#444444;
+	font-size:12px;
+	margin:5px 0px;
+	display:block;
+	float:left;
+}
+.last {
+	margin-right:0px !important;
+}
+.srcbg .spanL {
+	background:url(../images/srcbg_L.png) left no-repeat;
+	height:151px;
+	width:10px;
+	float:left;
+}
+.srcbg .spanR {
+	background:url(../images/srcbg_R.png) right no-repeat;
+	height:151px;
+	width:10px;
+	float:left;
+}
+.srcbg .grt {
+	background:url(../images/srcbg_m.png) repeat-x;
+	height:151px;
+	float:left;
+	padding-top:10px;
+}
+
+.srcbg h2 {
+	padding:1 0 0px 5px;
+	font-size:18px;
+	color:#252525;
+	
+	float:left;
+}
+.srcbg h3 {
+	padding:0px 0px 10px 5px;
+	font-size:18px;
+	color:#666;
+	display:block;
+	float:none;
+}
+.subpages h4{ color:#f76002;
+font-weight:bold; float:left;
+ text-decoration:underline;
+	}
+.bold {
+    font-weight: bold;
+}
+.rounded_box {
+    border-radius: 5px 5px 5px 5px;
+}
+.box_group{border: 1px solid #E2E2E2;
+    margin-top: 10px;}
+.column a:link, a:hover, a:visited , a:active{ color: #1574B6;}
+.column a:hover{text-decoration:underline; }
+.horizontal_info_list li{float:left;}
+
+
+select {
+	margin:3px 0px;
+	width:160px;
+	border:1px solid #e2e2e2;
+	height:21px;
+	font-size:12px;
+	padding:2px 0px;
+	font-family:'HelveticaMedium', Arial;
+}
