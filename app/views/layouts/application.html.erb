@@ -17,22 +17,9 @@
 
   <body>
     <div class="bgtp"></div>
-    <!--Header starts-->
     <div class="whtbg">
-      <div class="wrappermain">
-        <div class="logo"></div>
-        <!--Navigation starts-->
-        <div class="nav">
-          <ul>
-            <li><a href="/"><span>Home</span></a></li>
-            <li><a href="#"><span>About</span></a></li>
-            <li><a href="<%= assessment_index_path %>"><span>Assess Yourself</span></a></li>
-            <li><a href="<%= search_career_index_path %>"><span>Careers</span></a></li>
-            <li><a href="#"><span>Resources</span></a></li>
-            <li><a href="<%= job_search_path %>"><span>Jobs</span></a></li>
-          </ul>
-        </div>
-      </div>
+      <!--Menu starts-->
+      <%= render "layouts/menu" %>
     </div>
     <div class="orng_bg">
       <!--Main container starts-->

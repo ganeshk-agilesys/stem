@@ -3,6 +3,7 @@ module ApplicationHelper
   EDUCATION_LEVEL = %w(less_than_a_high_school_diploma high_school_diploma post_secondary_certificate some_college_courses associates_degree bachelors_degree post_baccalaureate_certificate masters_degree post_masters_certificate first_professional_degree doctoral_degree post_doctoral_training)
   EDUCATION_TYPES = %w(degree_program continuing_education_course online_education certification)
   SORT_OPTIONS = %w(national_salary best_match)
+  INDUSTRIES_FOR_OPTIONS =  JSON.parse(open(URI.escape("http://23.21.178.16/api/v1/industries.json")).read).collect{|a| [a["name"],a["id"]]}
   
     def translate_options(option_list, options = {})
     if option_list

@@ -3,10 +3,7 @@
     <div class="box_light_grey span-13 last">
       <h2><%= t(:industry_categories) %></h2>
       <ul class="side_nav">
-        <% raise @industry_list.inspect %>
-        
         <%- @industry_list.each do |industry| %>
-        
           <li>
             <%= link_to_unless_current industry["sub_name"], industry_path(:id =>industry["sub_id"]) do %>
               <div><span><%=industry["sub_name"]%></span></div>

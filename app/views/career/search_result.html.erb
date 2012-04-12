@@ -7,9 +7,8 @@
     <div class="span-00">
       <div class="clear"></div>
       <div class="container">
-        <%= form_tag(search_result_career_index_path, :method => :get) do |f| -%>
-
-          <div >
+        <%= form_tag(search_result_career_index_path, :method => :get, :class => "auto_search") do |f| -%>
+          <div>
             <div class="span-46" id="flash_messages">
             </div>
             <div style="display:none;" id="stem_bubble_contents"><span class="small_text">STEM stands for Science, Technology, Engineering, and Math. People who pursue these high-tech career paths tend to be highly valued by employers and may receive higher than usual salaries.</span></div>

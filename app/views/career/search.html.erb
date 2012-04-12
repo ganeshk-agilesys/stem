@@ -5,7 +5,7 @@
   <div class="span-46 last">
     <div class="span-34 prepend-top">
       <div class="span-33 half_padding box2 bg_srccar rounded_box search">
-        <%= form_tag(search_result_career_index_path, :method => :get) do |f| -%>
+        <%= form_tag(search_result_career_index_path, :method => :get, :class => "auto_search") do |f| -%>
           <h1 class="column span-33 last title bold">Search for Careers</h1>
           <div class="span-33 last append-bottom bold">By Keyword or Military Occupation (MOC)</div>
           <div class="span-18 inline_inputs">
@@ -39,7 +39,7 @@
     <div class="span-11 last prepend-top push-left">
       <div class="span-11 last box2 rounded_box grdt_rght">
         <div class="span-10 last half_padding sidebar">
-          <div >
+          <div>
             <div class="intro">Not sure where to start ?</div>
             <h3>Take a career Assessment</h3>
             <div style="clear:both;"></div>
