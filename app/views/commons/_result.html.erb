@@ -12,9 +12,12 @@
             <% if occupation.has_key?("average_national_salary")%>
               <li>Avg. National Salary: <%= number_to_currency(occupation["average_national_salary"], :precision => 0) %></li>
             <% end %>
-            <% if occupation.has_key?("education_level") %>
+            <%- if occupation.has_key?("average_state_salary") -%>
+              <li><%= t(:average)%> <%= "state name" %> <%= t(:salary) %>: <%= number_to_currency(occupation["average_state_salary"], :precision => 0) %></li>
+            <%- end -%>      
+            <%- if occupation.has_key?("education_level") -%>
               <li>Education: <%= occupation.education_level %></li>
-            <% end %>
+            <%- end -%>
           </ul>
         <% end %>
         <div style="margin:5px 0 0" class="span-35 last">
@@ -23,11 +26,11 @@
         <%- if occupation.has_key?("projected_national_openings") or occupation.has_key?("annual_national_growth") -%>
           <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list quiet">
             <%- if occupation.has_key?("projected_national_openings")-%>
-              <li>Projected Job Openings: <%= number_with_delimiter(occupation.projected_national_openings, :precision => 0) %></li>
+              <li>Projected Job Openings: <%= number_with_delimiter(occupation["projected_national_openings"], :precision => 0) %></li>
             <%- end -%>
             <%- if occupation.has_key?("annual_national_growth") -%>
-              <li>Annual Growth Rate: <%= number_with_delimiter(occupation.annual_national_growth, :precision => 0) %> %</li>
-              <%- end -%>
+              <li>Annual Growth Rate: <%= number_with_delimiter(occupation["annual_national_growth"], :precision => 0) %> %</li>
+            <%- end -%>
           </ul>
         <%- end -%>
         <%- if occupation.has_key?("industries") && occupation["industries"].present? -%>
@@ -42,7 +45,7 @@
           </ul>  
         <%- end -%>
         <div style="margin:5px 0" class="span-35 last column">
-          <%= link_to t("View jobs for #{occupation["title"]}", {:job => occupation["title"] }), search_result_career_index_path(:search => { 'keywords' => "onet:(#{occupation["api_safe_onet_soc_code"]})", 'location' => "" }) %>
+          <%= link_to t(:view_jobs_for, {:job => occupation["title"] }), search_result_career_index_path(:search => { 'keywords' => "onet:(#{occupation["short_soc_code"]})", 'location' => 'NC' }) %>
         </div>
       </div>
     <% end %>
@@ -54,4 +57,6 @@
     <div class="left"><img src="/assets/icons/onet-e093eac39b28e3d975b3739c6dedeb2b.jpg" class="" alt="Onet"></div>
     <div class="left"><span class="tinytext">National Data Source: Bureau of Labor Statistics, Office of Occupational Statistics and Employment Projections<br>State Data Source: The Employment Security Commission</span></div>
   </div>
+<% else %>
+  No contents!!
 <% end %>

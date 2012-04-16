@@ -5,7 +5,7 @@
     </div>
   <% end %>
   <h2 >Career Assesment</h2><div class="brder" style="width:100%;"></div>
-  <%= form_tag(:action => "assessment_result",:class => "auto_search") do  %>
+  <%= form_tag('/assessment/assessment', :method => :get,:class => "auto_search") do  %>
     <div class="inner_wrapperleft push-last span-200" >
       <div class="top_bnr">Answer These 14 questions to learn what careers might best match your skills and interests .It should only take a few minutes .Don’t Think too hard about your answers .Go with your first choice</div>
       <div class="assess">

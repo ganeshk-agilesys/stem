@@ -1,4 +1,4 @@
-
+<%#= raise @occupations.inspect %>
 <!--Main container starts-->
 <div style="min-height:500px;">
   <div class="wrapperbanr">
@@ -7,7 +7,7 @@
     <div class="span-00">
       <div class="clear"></div>
       <div class="container">
-        <%= form_tag(search_result_career_index_path, :method => :get, :class => "auto_search") do |f| -%>
+        <%= form_tag('/career/search_result', :method => :get, :class => "auto_search") do |f| -%>
           <div>
             <div class="span-46" id="flash_messages">
             </div>
@@ -20,8 +20,7 @@
               <div style="padding: 15px 5px 15px 15px" class="span-45 last search top_bnr">
                 <label for="search_keywords" class="no_colon bold">By Keyword or Military Occupation (MOC)</label><br>
                 <div class="span-18 inline_inputs">
-                  <input type="text" id="ezpz_hint_dummy_input_0" value="" class="moc_autocomplete_multiple hint ezpz-hint ui-autocomplete-input" size="40" autocomplete="off" tabindex="0" role="textbox" aria-autocomplete="list" aria-haspopup="true">
-                  <input class="moc_autocomplete_multiple hint ui-autocomplete-input" hint="e.g. 'Nurse' or '11B'" id="search_keywords" name="search[keywords]" size="40" type="text" title="e.g. 'Nurse' or '11B'" style="display: none; " autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                  <%= text_field_tag "search[keywords]" %>
                 </div>
                 <div class="span-15 last inline_inputs">
                   <%= submit_tag "",:class => "btn_carrer"  %>
@@ -62,63 +61,7 @@
                 <hr class="auto">
                 <a href="/careers/assessment_result">View Assessment Results</a>
               </div>
-              <% unless @occupations.blank? %>
-                <div class="span-35 last results">
-                  <% @occupations.each do |occupation| %>
-                    <div class="span-35 last prepend-top">
-                      <div class="span-35 last header">
-                        <span class="column">
-                          <%= link_to occupation["title"],occupation["link"] %>
-                        </span>
-                      </div>
-                      <% if occupation.has_key?("average_national_salary") or occupation.has_key?("education_level") %>
-                        <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list bold">
-                          <% if occupation.has_key?("average_national_salary")%>
-                            <li>Avg. National Salary: <%= number_to_currency(occupation["average_national_salary"], :precision => 0) %></li>
-                          <% end %>
-                          <% if occupation.has_key?("education_level") %>
-                            <li>Education: <%= occupation.education_level %></li>
-                          <% end %>
-                        </ul>
-                      <% end %>
-                      <div style="margin:5px 0 0" class="span-35 last">
-                        <%= truncate(occupation["description"], :length => 250) %>
-                      </div>
-                      <%- if occupation.has_key?("projected_national_openings") or occupation.has_key?("annual_national_growth") -%>
-                        <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list quiet">
-                          <%- if occupation.has_key?("projected_national_openings")-%>
-                            <li>Projected Job Openings: <%= number_with_delimiter(occupation.projected_national_openings, :precision => 0) %></li>
-                          <%- end -%>
-                          <%- if occupation.has_key?("annual_national_growth") -%>
-                            <li>Annual Growth Rate: <%= number_with_delimiter(occupation.annual_national_growth, :precision => 0) %>%</li>
-                            <%- end -%>
-                        </ul>
-                      <%- end -%>
-                      <%- if occupation.has_key?("industries") && occupation["industries"].present? -%>
-                        <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list quiet">
-                          <li>
-                            Industry:
-                            <%- occupation["industries"].each do |i| -%>
-                              <%= link_to i["name"], "#" %>
-          <%#= link_to i["name"], i["published? ? industry_path(i) : industry_path(i.parent_industry) %>
-                            <%- end -%>
-                          </li>
-                        </ul>  
-                      <%- end -%>
-                      <div style="margin:5px 0" class="span-35 last column">
-                        <a href="/jobs/search?search%5Bkeywords%5D=onet%3A%2853-2011%29&amp;search%5Blocation%5D=">View jobs for Airline Pilots, Copilots, and Flight Engineers</a>
-                      </div>
-                    </div>
-                  <% end %>
-                  <div class="span-35 last append-bottom">
-                    <div class="inline_inputs right last" id="pagination"></div>
-                  </div>
-
-                  <hr class="auto">
-                  <div class="left"><img src="/assets/icons/onet-e093eac39b28e3d975b3739c6dedeb2b.jpg" class="" alt="Onet"></div>
-                  <div class="left"><span class="tinytext">National Data Source: Bureau of Labor Statistics, Office of Occupational Statistics and Employment Projections<br>State Data Source: The Employment Security Commission</span></div>
-                </div>
-              <% end %>
+              <%= render 'result_list' %>
             </div>
           </div>
 

@@ -7,6 +7,13 @@ class ApplicationController < ActionController::Base
     require 'open-uri'
     require 'net/https'
     require 'json'
-#    puts "Included all necessary files for Assessment"
+    #    puts "Included all necessary files for Assessment"
+  end
+  
+  def api_safe_params name,hash_param
+    outs = ''
+    hash_param.each_pair { |key,value| outs += 
+        name+'['+key.to_s+']='+value.to_s+'&'} 
+    outs.chomp('&')
   end
 end

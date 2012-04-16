@@ -1,0 +1,23 @@
+<div class="span-10 append-1 left_nav prepend-top">
+  <span class="bold quiet">Narrow Your Results</span>
+  <div class="span-9 last append-1 half_padding box_group rounded_box">
+    <label for="search_min_salary">Minimum National Salary</label>
+    <%= select_tag("search[min_salary]", options_for_select(translate_options( ApplicationHelper::SALARY_LEVEL_MIN)), { :prompt => "Any" }) %>
+  </div>
+  <div class="span-9 last append-1 half_padding box_group rounded_box">
+    <label for="search_minimum_education_level">Maximum Required Education</label>
+    <%= select_tag("search[minimum_education_level]", options_for_select(translate_options(ApplicationHelper::EDUCATION_LEVEL)), { :prompt => "Any" }) %>
+  </div>
+  <div class="span-9 last append-1 half_padding box_group rounded_box">
+    <label for="search_industry_id">Industry</label>
+    <%= select_tag("search[industry_id]", options_for_select(ApplicationHelper::INDUSTRIES_FOR_OPTIONS), { :prompt => "Any" }) %>
+  </div>
+  <div class="span-9 last append-1 half_padding box_group rounded_box append-bottom">
+    <span class="bold">STEM Careers</span><br>
+    <input type="hidden" value="0" name="search[stem_only]"><input type="checkbox" value="1" name="search[stem_only]" id="search_stem_only" class="inline_inputs">
+    <label for="search_stem_only" class="inline_inputs">Limit to STEM Career Paths</label>
+    <a id="stem" class="bubble_popup" href="#">What are STEM career paths?</a>
+  </div>
+  <hr class="auto">
+  <a href="/careers/assessment_result">View Assessment Results</a>
+</div>
