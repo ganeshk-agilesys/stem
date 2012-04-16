@@ -54,19 +54,14 @@ Stem::Application.routes.draw do
   # just remember to delete public/index.html.
   
   root :to => 'home#index'
-  resources :assessment, :only => [:index] do
-    collection do
-      post :assessment_result
-    end
-  end
+  get "assessment/assessment"
+  get "assessment/index"
   
-  resources :career, :only => [] do
-    collection do
-      get :search
-      get :search_result
-    end
-  end
+  get "career/search"
+  get "career/search_result"
+  get "career/assessment_result"
   
+   
   resources :industry, :only => [:index, :show]
   
 
