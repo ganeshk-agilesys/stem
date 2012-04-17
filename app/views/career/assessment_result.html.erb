@@ -6,19 +6,19 @@
       <div class="clear"></div>
       <div class="container">
         <%= form_tag('/career/assessment_result', :method => :get, :class => "auto_search") do |f| -%>
-          <%= hidden_field_tag "search[riasec]", @riasec %>
-          <%= hidden_field_tag "search[skills]", @skills %>
+          <%= hidden_field_tag "search[riasec]", params[:search][:riasec] %>
+          <%= hidden_field_tag "search[skills]", params[:search][:skills] %>
           <div>
             <div class="span-46" id="flash_messages"></div>
             <div style="display:none;" id="stem_bubble_contents"><span class="small_text">STEM stands for Science, Technology, Engineering, and Math. People who pursue these high-tech career paths tend to be highly valued by employers and may receive higher than usual salaries.</span></div>
             <div class="span-46 last font1">
-              Explore Career Paths
+              
               </h2>
               <hr/>
               <span class="space3"></span>
               <div class="span-46 last search">
                 <div class="span-46 last bold prepend-top">
-                  <div class="fl" id="result_count">Found 8 matches for "<em>11B1A "Bomber Pilot, B-1 (Officer)"</em>"</div>
+                  <div class="fl" id="result_count"></div>
                   <%= render "commons/state_dropdown" %>
                 </div>
                 <hr class="auto">

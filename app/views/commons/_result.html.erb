@@ -1,4 +1,4 @@
-<% unless @occupations.blank? %>
+<%- unless @occupations.blank? -%>
   <div class="span-35 last results">
     <% @occupations.each do |occupation| %>
       <div class="span-35 last prepend-top">
@@ -15,8 +15,8 @@
             <%- if occupation.has_key?("average_state_salary") -%>
               <li><%= t(:average)%> <%= "state name" %> <%= t(:salary) %>: <%= number_to_currency(occupation["average_state_salary"], :precision => 0) %></li>
             <%- end -%>      
-            <%- if occupation.has_key?("education_level") -%>
-              <li>Education: <%= occupation.education_level %></li>
+            <%- if occupation.has_key?("education_level_number") -%>
+              <li>Education: <%= occupation["education_level_number"] %></li>
             <%- end -%>
           </ul>
         <% end %>
@@ -45,18 +45,17 @@
           </ul>  
         <%- end -%>
         <div style="margin:5px 0" class="span-35 last column">
-          <%= link_to t(:view_jobs_for, {:job => occupation["title"] }), search_result_career_index_path(:search => { 'keywords' => "onet:(#{occupation["short_soc_code"]})", 'location' => 'NC' }) %>
+          <%= link_to t(:view_jobs_for, {:job => occupation["title"] }), career_search_result_path(:search => { 'keywords' => "onet:(#{occupation["short_soc_code"]})", 'location' => 'NC' }) %>
         </div>
       </div>
     <% end %>
     <div class="span-35 last append-bottom">
-      <div class="inline_inputs right last" id="pagination"></div>
+      <div class="inline_inputs right last" id="pagination">
+      </div>
     </div>
-
-    <hr class="auto">
-    <div class="left"><img src="/assets/icons/onet-e093eac39b28e3d975b3739c6dedeb2b.jpg" class="" alt="Onet"></div>
-    <div class="left"><span class="tinytext">National Data Source: Bureau of Labor Statistics, Office of Occupational Statistics and Employment Projections<br>State Data Source: The Employment Security Commission</span></div>
   </div>
-<% else %>
-  No contents!!
-<% end %>
+<%- else -%>
+  <div class="span-30 append-8 prepend-2" style="margin-top: 9em;">
+    <span><b>We're sorry, but no results were found. Please edit your search criteria and try again.</b></span>
+  </div>
+<%- end -%>

@@ -11,9 +11,13 @@ class ApplicationController < ActionController::Base
   end
   
   def api_safe_params name,hash_param
-    outs = ''
-    hash_param.each_pair { |key,value| outs += 
-        name+'['+key.to_s+']='+value.to_s+'&'} 
-    outs.chomp('&')
+    unless hash_param.blank?
+      outs = ''
+      hash_param.each_pair { |key,value| outs += 
+          name+'['+key.to_s+']='+value.to_s+'&'} 
+      outs.chomp('&')
+    else
+      ''
+    end
   end
 end

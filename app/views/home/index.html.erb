@@ -50,10 +50,14 @@
         <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>
       </div>
     </div>
-    <div class="inner_wrapperrght"><%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :style => "position:relative; "%>
-
-
+    <div class="inner_wrapperrght">
+      <%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :style => "position:relative;", :id => "stem_image", :class => "stem_image", :use_map => "#stem_image_map"%>
     </div>
+    <map name="stem_image_map">
+      <area shape="circle" coords="10,82,126" alt="Sun" href="#" />
+      <area shape="circle" coords="90,58,3" alt="Mercury" href="#" />
+      <area shape="circle" coords="124,58,8" alt="Venus" href="#" />
+    </map>
   </div>
   <div class="clear"></div>
   <div style="float:left; width:100%;">
@@ -66,3 +70,9 @@
   </div>
   <div class="clear"></div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $(".stem_image").maphilight({fade: false});
+  });
+</script>

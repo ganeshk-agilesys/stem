@@ -1,1 +1,4 @@
-$('.results').html('<%= escape_javascript(render 'result_list') %>');
+$('.results').html('<%= escape_javascript(render 'commons/result') %>');
+<% if params[:q].present? and @occupations.present? %>
+  $('#result_count').html('Found <%=@occupations.count%> matches for "<%=params[:q]%>"')
+<% end %>

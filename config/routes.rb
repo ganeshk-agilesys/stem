@@ -1,8 +1,4 @@
 Stem::Application.routes.draw do
-  get "job/search"
-
-  get "job/search_result"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,15 +52,11 @@ Stem::Application.routes.draw do
   root :to => 'home#index'
   get "assessment/assessment"
   get "assessment/index"
-  
+  get "job/search"
   get "career/search"
   get "career/search_result"
   get "career/assessment_result"
-  
-   
   resources :industry, :only => [:index, :show]
-  
-
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

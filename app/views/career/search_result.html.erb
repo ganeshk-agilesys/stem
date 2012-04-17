@@ -20,7 +20,7 @@
               <div style="padding: 15px 5px 15px 15px" class="span-45 last search top_bnr">
                 <label for="search_keywords" class="no_colon bold">By Keyword or Military Occupation (MOC)</label><br>
                 <div class="span-18 inline_inputs">
-                  <%= text_field_tag "search[keywords]" %>
+                  <%= text_field_tag "q",params[:q] %>
                 </div>
                 <div class="span-15 last inline_inputs">
                   <%= submit_tag "",:class => "btn_carrer"  %>
@@ -29,7 +29,7 @@
 
               <div class="span-46 last search">
                 <div class="span-46 last bold prepend-top">
-                  <div class="fl" id="result_count">Found 8 matches for "<em>11B1A "Bomber Pilot, B-1 (Officer)"</em>"</div>
+                  <% if @occupations.count > 0 %><div class="fl" id="result_count">Found <%= @occupations.count %> matches for "<em><%= params[:q] %></em>"</div><% end %>
                   <div style="padding: 0 0 0 30px" class="rt">
                     Show Data For
                     <%= select_tag :state_id, options_for_select(state_hash_as_array, "") %>
@@ -58,10 +58,10 @@
                   <label for="search_stem_only" class="inline_inputs">Limit to STEM Career Paths</label>
                   <a id="stem" class="bubble_popup" href="#">What are STEM career paths?</a>
                 </div>
-                <hr class="auto">
-                <a href="/careers/assessment_result">View Assessment Results</a>
               </div>
-              <%= render 'result_list' %>
+              <div class="results">
+                <%= render "commons/result" %>
+              </div>
             </div>
           </div>
 

@@ -337,9 +337,9 @@ hr {
 }
 .rght_bnr {
     margin-top:10px;
-    background:url(right_clmn.jpg) repeat-x;
+    background:url(right_clmn.jpg) repeat-x scroll left bottom transparent;
     width:217px;
-    height:371px;
+    height:470px;
     border:1px #E2E2E2 solid;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -400,7 +400,7 @@ hr {
 }
 .list_rght {
     margin-left:34px;
-    margin-top:20px;
+    margin-top:10px;
 }
 .btn_crslt {
     background:url(curreslt.png) no-repeat;
@@ -414,6 +414,7 @@ hr {
     width:123px;
     float:right;
     height:33px;
+    border:none !important;
 }
 .btn_carrer {
     background:url(srch_career.png) no-repeat;
@@ -623,19 +624,19 @@ h1.title {
     margin-right:0px !important;
 }
 .srcbg .spanL {
-    background:url(../images/srcbg_L.png) left no-repeat;
+    background:url(srcbg_L.png) left no-repeat;
     height:151px;
     width:10px;
     float:left;
 }
 .srcbg .spanR {
-    background:url(../images/srcbg_R.png) right no-repeat;
+    background:url(srcbg_R.png) right no-repeat;
     height:151px;
     width:10px;
     float:left;
 }
 .srcbg .grt {
-    background:url(../images/srcbg_m.png) repeat-x;
+    background:url(srcbg_m.png) repeat-x;
     height:151px;
     float:left;
     padding-top:10px;
@@ -699,7 +700,7 @@ select {
 }
 
 .loading_box{
-    background: url("/assets/common/loading_wheel.gif") no-repeat scroll center center transparent;
+    background: url(loading_wheel.gif) no-repeat scroll center center transparent;
     border-radius: 3px 3px 3px 3px;
     height: 30px;
     margin: 50px auto 0;

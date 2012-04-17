@@ -9,7 +9,7 @@
           <h1 class="column span-33 last title bold">Search for Careers</h1>
           <div class="span-33 last append-bottom bold">By Keyword or Military Occupation (MOC)</div>
           <div class="span-18">
-            <%= text_field_tag "search[keywords]" %>
+            <%= text_field_tag "q",params[:q] %>
           </div>
           <div class="span-15 last inline_inputs">
             <%= submit_tag "",:class => "btn_carrer"  %>

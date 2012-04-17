@@ -1,0 +1,50 @@
+<% unless @job_posts.empty? -%>
+<div class="span-35 last">
+  <div class="span-35 last">
+    <div class="span-35 last">
+
+      <%- @job_posts.each do |job_post| -%>
+      <div class="span-35 last prepend-top results">
+        <div class="span-35 last header">
+          <div class="column">
+
+            <%= link_to job_post["title"], job_search_path(job_post) %>
+
+          </div>
+        </div>
+        <ul class="column span-35 last horizontal_info_list">
+          <li class="bold"><%= job_post["company_name"] %></li>
+          <li class="quiet"><%= job_post["location"] %></li>
+        </ul>
+        <div class="span-35 last" style="margin:5px 0">
+          <%= truncate(job_post["description"], :length => 230) %>
+        </div>
+        <ul class="column span-35 last horizontal_info_list quiet">
+          <%#- if job_post.external? -%>
+            <li><%#= t(:from) %> <%= job_post["source"] -%></li>
+          <%#- end -%>
+          <li><%= time_ago_in_words(job_post["posted_at"]) if job_post.has_key?("posted_at") %></li>
+        </ul>
+      </div>
+      <%- end -%>
+    </div>
+
+    <div class="span-35 last">
+      <div class="span-35 last append-bottom">
+        <div class="column inline_inputs right last">
+          
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+ 
+</div>
+<%- else -%>
+<div class="span-35 push_text_center box2" style="background: transparent <%= asset_path('icons/ic_magnifying.png') %> no-repeat center center; height: 250px">
+  <div class="span-30 append-8 prepend-2" style="margin-top: 9em;">
+    <span><b><%= t(:no_results) %></b></span><br />
+  </div>
+</div>
+<%- end -%>
