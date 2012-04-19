@@ -222,7 +222,7 @@ input[type="text"] {
     color:#777;
     display:block;
 }
-.inner_wrapperleft .btm_cont {
+.inner_wrapperleft #slideshow .btm_cont {
     font-size:13px;
     border-left:#e7e7e7 5px solid;
     padding-left:12px;
@@ -230,7 +230,7 @@ input[type="text"] {
     line-height:17px;
     font-family:'HelveticaMedium', Arial;
 }
-.inner_wrapperleft .btm_cont span {
+.inner_wrapperleft #slideshow .btm_cont span {
     font-size:13px;
     font-family:'HelveticaBold', Arial;
 }
@@ -703,6 +703,6 @@ select {
     background: url(loading_wheel.gif) no-repeat scroll center center transparent;
     border-radius: 3px 3px 3px 3px;
     height: 30px;
-    margin: 50px auto 0;
+    margin: 150px auto 0;
     width: 30px;
 }

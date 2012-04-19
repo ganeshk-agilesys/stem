@@ -1,0 +1,82 @@
+<div class="span-29 prepend-1 prepend-top whtbg">
+  <div class="span-29 last">
+    <div class="span-3">
+      <%= image_tag "icons/overview_b.png", :style => "vertical-align: middle;" %>
+    </div>
+    <div class="span-24 last append-2">
+      <span class="title"><%= t(:career_description) %></span>
+      <br />
+      <span><%= @occupation["description"] %></span>
+      <br /><br />
+      <hr class="divider" />
+    </div>
+  </div>
+
+  <div class="span-29 last prepend-top">
+    <div class="span-3">
+      <%= image_tag "icons/overview_c.png", :style => "vertical-align: middle;" %>
+    </div>
+    <div class="span-24 last append-2">
+      <span class="title"><%= t(:salary) %></span>
+      <br>
+      <div class="column append-1"><label><%= t(:low) %></label> <span><b id="state-low">No Data</b></span></div>
+      <div class="column append-1"><label><%= t(:average) %></label> <span><b id="state-average">No Data</b></span></div>
+      <div class="column append-1"><label><%= t(:high) %></label> <span><b id="state-high">No Data</b></span></div>
+      <br /><br />
+      <hr class="divider" />
+    </div>
+  </div>
+</div>
+
+<div class="span-15 prepend-top append-bottom whtbg">
+  <div class="span-15 last box2 box_grey">
+
+    <div class="span-15 box_padding">
+      <div class="column">
+        <%= image_tag "icons/ic_assess.png" %>
+      </div>
+      <div class="span-11">
+        <h3><%#= link_to_remote_dialog(t(:view_similar_careers), "assistant", { :url => edit_lattice_assistant_path(:occupation_id => @occupation.id, :section => 7) }, { :title => t(:change_preferences) }) %></h3>
+        <span><%= t(:view_similar_careers_desc) %></span>
+        <br />
+        <div class="right">
+<%#= link_to_remote_dialog(t(:view_now), "assistant", { :url => edit_lattice_assistant_path(:occupation_id => @occupation.id, :section => 7) }, { :title => t(:change_preferences) }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="span-15 last prepend-top box2 box_grey">
+    <div class="span-15 box_padding">
+      <div class="column">
+        <%= image_tag "icons/ic_move_up.png" %>
+      </div>
+      <div class="span-11">
+        <h3><%#= link_to(t(:move_up_career), occupation_ladder_path(@occupation)) %></h3>
+        <span><%= t(:move_up_career_desc) %></span>
+        <br />
+        <div class="right">
+<%#= link_to(t(:view_now), occupation_ladder_path(@occupation)) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="span-15 last prepend-top box2 box_grey">
+    <div class="span-15 box_padding">
+      <%- if @occupation.has_key?("related_careers") -%>
+        <div class="span-15 last">
+          <span class="colon"><strong><%= t(:check_out_related_careers) %></strong></span>
+          <br />
+          <ul style="padding: 0.5em 0; margin-bottom: 0;">
+            <%- for occupation in @occupation["related_careers"].first(5) -%>
+              <li>
+                <%= link_to truncate(occupation["title"], :length => 42), career_show_path(:api_safe_onet_soc_code => occupation["api_safe_onet_soc_code"]), :title => occupation["title"] %>
+              </li>
+            <%- end -%>
+          </ul>
+        </div>
+      <%- end -%>
+    </div>
+  </div>
+</div>

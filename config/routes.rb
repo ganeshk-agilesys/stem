@@ -56,6 +56,7 @@ Stem::Application.routes.draw do
   get "career/search"
   get "career/search_result"
   get "career/assessment_result"
+  get "career/show"
   resources :industry, :only => [:index, :show]
   # See how all your routes lay out with "rake routes"
 

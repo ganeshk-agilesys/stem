@@ -6,12 +6,20 @@
       <div class="top_bnr" style="height:60px !important;padding:10px;" >
         <span style="display:block;float:left; width:330px;margin-right:25px; font-family:'HelveticaBold', Arial; font-size:13px;">					Military Occupation or Job Keyword
           <label>
-            <%= text_field_tag "search[keywords]" %>
+            <% if params[:search].present? %>
+              <%= text_field_tag "search[keywords]",params[:search][:keywords] %>
+            <% else %>
+              <%= text_field_tag "search[keywords]"%>
+            <% end %>
           </label>
           <br />
         </span>
         <span style="display:block; width:330px;margin-right:25px; float:left;font-family:'HelveticaBold', Arial; font-size:13px;">Location				<br /> <label>
-            <%= text_field_tag "search[location]" %>
+            <% if params[:search].present? %>        
+              <%= text_field_tag "search[location]",params[:search][:location] %>
+            <% else %>
+              <%= text_field_tag "search[location]" %>
+            <% end %>
           </label>
         </span> 
         <div style="margin-top:20px; float:left" >
@@ -29,11 +37,11 @@
         <span class="bold quiet"><%= t(:narrow_your_results) %></span>
         <div class="span-9 last append-1 half_padding box_group rounded_box">
           <%= label_tag "search[job_type]", t(:job_type) %>
-          <%= select_tag("search[job_type]", translate_options(ApplicationHelper::JOB_TYPE), { :include_blank => t(:any) }) %>
+          <%= select_tag("search[job_type]", options_for_select(translate_options(ApplicationHelper::JOB_TYPE)), { :prompt => "Any" }) %>
         </div>
         <div class="span-9 last append-1 half_padding box_group rounded_box append-bottom">
           <%= label_tag "search[distance]", t(:distance) %>
-          <%= select_tag "search[distance]", translate_options(ApplicationHelper::DISTANCE), :include_blank => true %>
+          <%= select_tag("search[distance]",  options_for_select(translate_options(ApplicationHelper::DISTANCE)), {:prompt => "Any"}) %>
         </div>
       </div>
 
@@ -43,13 +51,13 @@
             <b>Showing results for related civilian jobs. Click a specific job title to narrow the results.</b>
             <ul class="column span-16 last">
               <%- @job_titles_part1.each do |title| -%>
-                <li><%= link_to title, search_job_posts_path(:search => { 'keywords' => "\"#{title}\"", 'location' => @search.location }) %></li>
+                <li><%= link_to title, search_job_posts_path(:search => { 'keywords' => "\"#{title}\"", 'location' => params[:search][:location] }) %></li>
               <%- end -%>
             </ul>
             <%- if !@job_titles_part2.blank? -%>
               <ul class="column span-16 last">
                 <%- @job_titles_part2.each do |title| -%>
-                  <li><%= link_to title, search_job_posts_path(:search => { 'keywords' => "\"#{title}\"", 'location' => @search.location }) %></li>
+                  <li><%= link_to title, search_job_posts_path(:search => { 'keywords' => "\"#{title}\"", 'location' => params[:search][:location] }) %></li>
                 <%- end -%>
               </ul>
             <%- end -%>
@@ -57,10 +65,10 @@
         <%- end -%>
 
         <div class="span-35 last bold prepend-top">
-          <div id="result_count" class="left"><%#= markdown(t(:found_x_matches_for_keyword, :count => @job_posts.total_entries, :keyword => @search.keywords)) %></div>
+          <div id="result_count" class="left"><%= markdown(t(:found_x_matches_for_keyword, :count => @job_posts.count, :keyword => params[:search][:keywords])) %></div>
           <div class="right">
             <%= t(:sort_by) %>
-            <%= select_tag "search[sort]",ApplicationHelper::SORT_OPTIONS %>
+            <%= select_tag("search[sort]",options_for_select(translate_options(ApplicationHelper::SORT_OPTIONS))) %>
           </div>
         </div>
         <hr class="auto" />

@@ -58,4 +58,26 @@ module ApplicationHelper
         end ]
     end
   end
+
+  def translate_option_tags(option_list, options = {})
+    html = translate_options(option_list, options).inject("") do |result, item|
+      result << "<option value='#{item[1]}'"
+      if options[:selected]
+        result << " selected='selected'" if options[:selected] == item[1]
+      end
+      result << ">" + item[0] + "</option>"
+    end
+
+    html.html_safe
+  end
+  
+  
+  def markdown(text, filter_ptags = true)
+    html = RDiscount.new(text, :filter_html).to_html
+    if filter_ptags and html =~ /^<p>/
+      html = html.slice(3..-6) #strip the <p> tag
+    end
+
+    html.html_safe
+  end
 end

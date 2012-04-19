@@ -1,0 +1,2 @@
+$('#result_count').html('<%= escape_javascript(markdown(t(:found_x_matches_for_keyword, :count => @job_posts.count, :keyword => params[:search][:keywords]))) %>');
+$('.results').html('<%= escape_javascript(render 'job_list') %>');

@@ -1,0 +1,23 @@
+<div class="wrapperbanr">
+  <div id="tabs" style="clear: both;">
+    <ul>
+      <li><a href="#tab-1"><span><%= h(t(:overview)) %></span></a></li>
+      <li><a href="#tab-2"><span><%= h(t(:details)) %></span></a></li>
+      <li><a href="#tab-3"><span><%= h(t(:assess_job_skills)) %></span></a></li>
+    </ul>
+    <div id="tab-1" class="span-46 last whtbg">
+      <%= render 'overview_tab' %>
+    </div>
+    <div id="tab-2" class="span-46 last whtbg">
+      <%= render 'details_tab' %>
+    </div>
+    <div id="tab-3" class="span-46 last whtbg">
+      <%= render 'job_skills_tab' %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#tabs').tabs().removeClass('ui-widget');
+  });
+</script>

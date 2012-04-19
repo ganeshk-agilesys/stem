@@ -66,4 +66,10 @@ module CareerHelper
     select_tag :state_id, options_for_select(state_hash_as_array, "")
   end
   
+  def stars_for(stars)
+    (1..stars).collect do
+      image_tag "star.png"
+    end.join.html_safe
+  end
+  
 end

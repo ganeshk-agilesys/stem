@@ -45,9 +45,24 @@
   <div class="span-46">
     <div class="inner_wrapperleft"> <span class="headingtxt">Welcome to STEMCareers</span><span class="cont" style="margin-top:10px;">A resource to learn all about STEM Careers, Educational Requirements, and Jobs that you may be interested in.</span>
       <p style="margin-top:16px;margin-bottom:28px;"><a href="<%=assessment_index_path%>"><%= image_tag "get_started_btn.jpg", :width=>"178", :height=>"39"  %></a></p>
-      <div class="btm_cont"><span>Did you know...</span>
-        <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Caree r Awareness as a topic that would help them to prepare students for STEM careers.</p>
-        <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>
+      <div id="slideshow">
+        <div class="btm_cont" style="border-left:5px solid #e7e7e7 !important;">
+          <span>Did you know:</span>
+          <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Caree r Awareness as a topic that would help them to prepare students for STEM careers.</p>
+          <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>
+        </div> 
+
+        <div class="btm_cont" style="border-left:5px solid #e7e7e7 !important;">
+          <span>Did you know:</span>
+          <p>In a national poll of recent high school graduates, more than two-thirds who took Algebra II in high school reported that they were well prepared for the demand they faced in college and the work place.  In contrast, of graduates who took less than Algebra II, only four out of ten say they were well prepared.</p>
+          <p><span style="font-size:11px;">(Source: Achieve, Inc.)</span></p>
+        </div>
+
+        <div class="btm_cont" style="border-left:5px solid #e7e7e7 !important;"> 
+          <span>Did you know:</span>
+          <p>High concentrations of STEM occupations are usually in areas with technology centers and research parks.</p>
+          <p><span style="font-size:11px;">(Source: U.S. Bureau of Labor Statistics)</span></p>
+        </div>
       </div>
     </div>
     <div class="inner_wrapperrght">
@@ -72,7 +87,13 @@
 </div>
 
 <script type="text/javascript">
-  $(function() {
-    $(".stem_image").maphilight({fade: false});
+  $(document).ready(function(){
+    $("#slideshow").cycle({
+      fx: 'scrollLeft',
+      next:   '#slideshow', 
+      pause:   1,
+      delay: -2000
+    });
+   $('#tabs').tabs();
   });
 </script>

@@ -4,7 +4,7 @@
       <div class="span-35 last prepend-top">
         <div class="span-35 last header">
           <span class="column">
-            <%= link_to occupation["title"],occupation["link"] %>
+            <%= link_to occupation["title"],career_show_path(occupation["id"], :api_safe_onet_code => occupation["api_safe_onet_soc_code"])%>
           </span>
         </div>
         <% if occupation.has_key?("average_national_salary") or occupation.has_key?("education_level") %>
@@ -45,7 +45,7 @@
           </ul>  
         <%- end -%>
         <div style="margin:5px 0" class="span-35 last column">
-          <%= link_to t(:view_jobs_for, {:job => occupation["title"] }), career_search_result_path(:search => { 'keywords' => "onet:(#{occupation["short_soc_code"]})", 'location' => 'NC' }) %>
+          <%= link_to t(:view_jobs_for, {:job => occupation["title"] }), job_search_path(:search => { 'keywords' => "onet:(#{occupation["onet_soc_code"].split('.')[0]})", 'location' => 'NC' }) %>
         </div>
       </div>
     <% end %>

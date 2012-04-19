@@ -4,7 +4,7 @@
       <div class="span-35 last prepend-top">
         <div class="span-35 last header">
           <span class="column">
-            <%= link_to occupation["title"],occupation["link"] %>
+            <%= link_to occupation["title"],career_show_path(occupation["api_safe_onet_soc_code"]) %>
           </span>
         </div>
         <% if occupation.has_key?("average_national_salary") or occupation.has_key?("education_level") %>
