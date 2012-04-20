@@ -101,6 +101,7 @@ input[type="text"] {
     width:920px;
     margin:0px auto;
     padding:20px;
+    overflow:hidden;
 }
 .wrapperbanr h2 {
     color:#1774b7;
@@ -706,3 +707,15 @@ select {
     margin: 150px auto 0;
     width: 30px;
 }
+.side_navContainer{  background: #F0F0F0;border: 1px solid #E2E2E2;padding:10px;}
+.side_navContainer h2{font-size:13px;color:#000;}
+ul.side_nav li{display:block;}
+ul.side_nav li a{display:block;padding:10px;border-bottom: 1px dashed #ddd;color:#1574B6;text-decoration: none;}
+ul.side_nav li a.selected{background:url(nav_highlight.png) no-repeat 0 0; height: 29px; width: 229px;color:#FFF;}
+ul.side_nav li a:hover{text-decoration: underline;}
+.sideHeader{font-size:13px;color:#000; background-color: #E2E2E2;border-bottom: 1px solid #CECECE;margin-bottom: 10px;float:none;padding:5px;}
+
+ul.topCareer li{display: block;padding:5px 5px 5px 18px; background: url(blue_arrow.png) no-repeat 8px 7px;}
+ul.topCareer li a{color:#1574B6;}
+ul.topCareer li a:hover{color:#1574B6; text-decoration:underline}
+h2.signup{color: #096BAF;font-size: 1.2em;font-weight: bold;float:none; padding:0.75em 0; }

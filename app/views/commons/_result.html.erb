@@ -4,7 +4,7 @@
       <div class="span-35 last prepend-top">
         <div class="span-35 last header">
           <span class="column">
-            <%= link_to occupation["title"],career_show_path(occupation["id"], :api_safe_onet_code => occupation["api_safe_onet_soc_code"])%>
+            <b><%= link_to occupation["title"],career_show_path(occupation["id"], :api_safe_onet_code => occupation["api_safe_onet_soc_code"])%></b>
           </span>
         </div>
         <% if occupation.has_key?("average_national_salary") or occupation.has_key?("education_level") %>
@@ -12,8 +12,8 @@
             <% if occupation.has_key?("average_national_salary")%>
               <li>Avg. National Salary: <%= number_to_currency(occupation["average_national_salary"], :precision => 0) %></li>
             <% end %>
-            <%- if occupation.has_key?("average_state_salary") -%>
-              <li><%= t(:average)%> <%= "state name" %> <%= t(:salary) %>: <%= number_to_currency(occupation["average_state_salary"], :precision => 0) %></li>
+            <%- if occupation.has_key?("state_salaries") -%>
+              <li><%= t(:average)%> <%= occupation["state_salaries"]["state"] %> <%= t(:salary) %>: <%= number_to_currency(occupation["state_salaries"], :precision => 0) %></li>
             <%- end -%>      
             <%- if occupation.has_key?("education_level_number") -%>
               <li>Education: <%= occupation["education_level_number"] %></li>

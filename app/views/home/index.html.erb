@@ -48,7 +48,7 @@
       <div id="slideshow">
         <div class="btm_cont" style="border-left:5px solid #e7e7e7 !important;">
           <span>Did you know:</span>
-          <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Caree r Awareness as a topic that would help them to prepare students for STEM careers.</p>
+          <p>In a study conducted by Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education, slightly more than 75% of the teachers noted Career Awareness as a topic that would help them to prepare students for STEM careers.</p>
           <p><span style="font-size:11px;">(Source: Leonard Gelfand Center for Service Learning and Outreach at Carnegie Mellon University and The Intermediate Unit 1 Center for STEM Education)</span></p>
         </div> 
 
@@ -66,13 +66,11 @@
       </div>
     </div>
     <div class="inner_wrapperrght">
-      <%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :style => "position:relative;", :id => "stem_image", :class => "stem_image", :use_map => "#stem_image_map"%>
+      <%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :use_map => "#stemmap"%>
+      <map name="stemmap">
+        <area shape="rect" coords="0,0,200,200" alt="This is Sun!" title="this si 1"/>
+      </map>
     </div>
-    <map name="stem_image_map">
-      <area shape="circle" coords="10,82,126" alt="Sun" href="#" />
-      <area shape="circle" coords="90,58,3" alt="Mercury" href="#" />
-      <area shape="circle" coords="124,58,8" alt="Venus" href="#" />
-    </map>
   </div>
   <div class="clear"></div>
   <div style="float:left; width:100%;">
@@ -80,8 +78,10 @@
     <div class="ourpartnr">Our Partners</div>
     <div class="brder">&nbsp;</div>
   </div>
-  <div class="logos" >
-    <%= image_tag "cisco_color.png", :width=>"93", :height=>"82"%><%= image_tag "futures_color.png", :width=>"221", :height=>"82"%><%= image_tag "communicatio_color.png", :width=>"177", :height=>"82" , :style=>"margin-right:0px !important;"%>
+  <div class="logos">
+    <%= link_to image_tag("cisco_color.png", :width=>"93", :height=>"82",:border => 0),"http://www.cisco.com/web/about/ac48/about_cisco_cisco_foundation.html" %>
+    <%= link_to image_tag("futures_color.png", :width=>"221", :height=>"82",:border => 0),"http://www.futuresinc.com/" %>
+    <%= link_to image_tag("communicatio_color.png", :width=>"177", :height=>"82",:border => 0),"http://www.cisnc.org/" %>
   </div>
   <div class="clear"></div>
 </div>
@@ -94,6 +94,6 @@
       pause:   1,
       delay: -2000
     });
-   $('#tabs').tabs();
+    $('#tabs').tabs();
   });
 </script>

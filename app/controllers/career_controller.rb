@@ -35,6 +35,7 @@ class CareerController < ApplicationController
         @occupations << JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")).read)
       end
     end
+#    raise @occupations.inspect
   end
   
   def show
