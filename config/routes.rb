@@ -53,11 +53,13 @@ Stem::Application.routes.draw do
   get "assessment/assessment"
   get "assessment/index"
   get "job/search"
+  get "job/show"
   get "career/search"
   get "career/search_result"
   get "career/assessment_result"
   get "career/show"
   resources :industry, :only => [:index, :show]
+  match 'static/:action', :controller => "static"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

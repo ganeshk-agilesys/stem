@@ -40,8 +40,8 @@ class CareerController < ApplicationController
   
   def show
     @occupation  = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{params[:api_safe_onet_code]}.json")).read)
-#    
-#    raise @occupation.inspect
+    #    
+    #    raise @occupation.inspect
   end
 
 end

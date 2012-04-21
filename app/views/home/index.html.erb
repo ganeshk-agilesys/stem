@@ -31,7 +31,7 @@
       <h2>Find</h2>
       <h3>&nbsp;Resources</h3>
       <p>Need additional information? Check out these resources dedicated to STEM careers. </p>
-      <div ><a href="#" class="linkbtm">Find STEM Resources »</a></div>
+      <div ><a href="static/resources" class="linkbtm">Find STEM Resources »</a></div>
     </div>
     <div class="features_tabs span-201" style="margin-right:0px !important;">
       <div style="float:left; "><%= image_tag "STEM_17.png", :width=>"22",:height=>"22" %></div>
@@ -66,9 +66,12 @@
       </div>
     </div>
     <div class="inner_wrapperrght">
-      <%= image_tag "fig_rght.jpg", :width=>"232", :height=>"287", :use_map => "#stemmap"%>
-      <map name="stemmap">
-        <area shape="rect" coords="0,0,200,200" alt="This is Sun!" title="this si 1"/>
+      <img src="/assets/STEM_IMG.jpg" width="232" height="287" border="0" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="circle" coords="118,131,51" href="#" alt="Mathematics" title="Science, Engineering and Technology use Mathematics to explore questions about the natural and human-made worlds." />
+        <area shape="circle" coords="114,213,52" href="#" alt="Engineering" title="Engineering creatively applies scientific principles to analyze events, design processes, develop materials, and construct objects that benefit society." />
+        <area shape="circle" coords="166,72,57" href="#" alt="Technology" title="Technology utilizes innovative tools, materials, and processes to solve problems or satisfy the needs of individuals, society, and the environment." />
+        <area shape="circle" coords="68,58,55" href="#" alt="Science" title="Science seeks to explain the complexity of the natural world and uses this understanding to make valid and useful predictions." />
       </map>
     </div>
   </div>

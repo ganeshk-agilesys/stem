@@ -1,3 +1,114 @@
 <div class="wrapperbanr">
-  Resources!
+  <div style="float:left;width:920px;margin:5px;">
+    <div  style="float:left; width:450px;border:1px solid red;padding:0px 4px;">
+      <h2 style="font-size:17px;">STEM Resources</h2>
+      <br class="clear" />
+      <p style="font-size:15px;color:#666666;">Are you interested in working with science, technology, engineering or mathematics? Checkout these great resources to get you started. But first...</p>
+      <br />
+      <div style="margin-top:5px;border:1px solid blue;">
+        <b style="font-size:13px;">What is a STEM Career</b>
+        <br />
+        <p style="font-size:13px;color:#666666;">
+          Science, technology, engineering and mathematics (STEM) workers drive our nation's innovation and competitiveness by generating new ideas, new companies and new industries.
+        </p>        
+      </div>
+      <div style="margin-top:5px;border:1px solid blue;">
+        <b style="font-size:13px;">Why choose a STEM Career?</b>
+        <br />
+        <p style="font-size:13px;color:#666666;">
+          Most employers want workers who are able to reason and solve problems using some math, science or technical knowledge. In most cases, this knowledge can be obtained through a 2 year program at your Community College.
+        </p>        
+      </div>
+      <div style="margin-top:5px;border:1px solid blue;font-size:13px;color:#666666;">
+        <h3>STEM careers are concentrated in the following industries:</h3><br/>
+        <ul style="margin:5px 0px 5px 12px;">
+          <li style="list-style-type:disc;">Agriculture, Agricultural Operations, and Related Sciences</li>
+          <li style="list-style-type:disc;">Computer and Informational Sciences and Support Services </li>
+          <li style="list-style-type:disc;">Engineering and Engineering Technologies</li>
+          <li style="list-style-type:disc;">Biological and Biomedical Sciences</li>
+          <li style="list-style-type:disc;">Mathematics and Statistics</li>
+          <li style="list-style-type:disc;">Physical Sciences and Technologies</li>
+        </ul>
+      </div>
+    </div>
+    <div style="float:left;width:450px;border:1px solid green;margin:0px 4px;">
+
+    </div>
+  </div>
+  <hr class="divider" />
+  <div  style="float:left;border:1px solid red;margin:0px 4px 10px 4px;width:920px;padding:5px;">
+    <div style="float:left;width:400px;">
+      <b style="font-size:13px;">When you've finished exploring STEM Career Pipeline,<br/>tell us what you think!</b>
+      <br class="clear"/>
+      <br/>
+      Take a short survey that lets us what you liked and didn't like about the website.
+    </div>
+    <div style="float:left;background:green;color:white;padding:8px;margin-top:30px;">
+      Take the survey
+    </div>
+  </div>
+
+  <hr class="divider" />
+  <div style="float:left;border:1px solid red;margin:0px 4px 10px 4px;width:920px;padding:5px;">
+    <b style="font-size:14px;">Useful Links</b>
+    <br/>
+    <p style="font-size:13px;color:#666666;">
+      Here are a few great resources to help you explore and learn about STEM Careers.
+    </p>
+    <br class="clear"/>
+    <br/>
+    <div style="float:left;width:200px;margin-right:10px;">
+      <b style="font-size:13px;">STEM Disciplines</b>
+      <ul style="color:gray;">
+        <li><%= link_to "Chemistry","http://www.onetonline.org/find/stem/?t=4&g=Go",:style => "color=gray;" %></li>
+        <li><%= link_to "Computer Science","http://www.onetonline.org/find/stem/?t=1&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Engineering","http://www.onetonline.org/find/stem/?t=3&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Environmental Science","http://www.onetonline.org/find/stem/?t=9&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Geo Sciences","http://www.onetonline.org/find/stem/?t=5&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Life Sciences","http://www.onetonline.org/find/stem/?t=2&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Mathematics","http://www.onetonline.org/find/stem/?t=7&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "Physics/Astronomy","http://www.onetonline.org/find/stem/?t=8&g=Go",:style => "color=#666;" %></li>
+        <li><%= link_to "All STEM Disciplines","http://www.onetonline.org/find/stem/?t=0&g=Go",:style => "color=#666;" %></li>
+      </ul>
+    </div>
+    <div  style="float:left;width:200px;">
+      <b style="font-size:13px;">STEM Library</b>
+      <ul style="color:#666 !important;">
+        <li><%= link_to "Videos","/static/videos",:style => "color=gray;" %></li>
+        <li><%= link_to "STEM Careers(by Industry)","static/industries",:style => "color=#666;" %></li>
+      </ul>
+      <br class="clear" />
+      <b style="font-size:13px;">Career Paths</b>
+      <ul style="color:gray;">
+        <li><%= link_to "Explore Career Paths",career_search_path,:style => "color=gray;" %></li>
+        <li><%= link_to "Military STEM Careers (Officers)","http://www.todaysmilitary.com/military-careers/military-career-fields/military-officer-careers/engineering-and-scientific-research-careers",:style => "color=#666;" %></li>
+        <li><%= link_to "Military STEM Careers (Enlisted)","http://www.todaysmilitary.com/military-careers/military-career-fields/military-enlisted-careers/engineering-and-scientific-research-careers",:style => "color=#666;" %></li>
+      </ul>
+      <br class="clear" />
+      <b style="font-size:13px;">Additional Resources</b>
+      <ul style="color:gray;">
+        <li><%= link_to "STEM Connector","http://www.stemconnector.org/",:style => "color=gray;" %></li>
+      </ul>
+    </div>
+
+    <div  style="float:left;width:200px;">
+      <b style="font-size:13px;">Industry Profiles</b>
+      <ul style="color:#666 !important;">
+        <% @industries.each do |i| %>
+          <li><%= link_to i["name"],industry_path(i["id"]),:style => "color=gray;" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div  style="float:left;width:200px;">
+      <div class="features_tabs span-201">
+        <div style="float:left; "><%= image_tag "STEM_10.png", :width=>"22",:height=>"22" %></div>
+        <h2>Assess</h2>
+        <h3>&nbsp;Yourself</h3>
+        <p>Take our simple 14-question self assessment to find out which careers match you. </p>
+        <div ><%= link_to "Assess Yourself »", assessment_index_path, :class => "linkbtm" %></div>
+      </div>
+    </div>
+
+  </div>
 </div>

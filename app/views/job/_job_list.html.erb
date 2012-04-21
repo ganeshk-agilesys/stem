@@ -7,7 +7,7 @@
           <div class="span-35 last prepend-top results">
             <div class="span-35 last header">
               <div class="column">
-                <%= link_to job_post["title"], job_search_path(job_post) %>
+                <%= link_to job_post["title"], job_show_path(:id => job_post["id"].split("-")[0]) %>
               </div>
             </div>
             <ul class="column span-35 last horizontal_info_list">

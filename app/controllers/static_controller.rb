@@ -17,6 +17,15 @@ class StaticController < ApplicationController
   end
   
   def resources
+    @industries = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read)
+    generic
+  end
+
+  def videos
+    generic
+  end
+  
+  def industries
     generic
   end
   

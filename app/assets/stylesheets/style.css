@@ -108,11 +108,11 @@ input[type="text"] {
     font-size:17px;
 }
 .logo {
-    background:url(logo_stem.png);
-    width:291px;
-    height:31px;
-    margin:44px 0px 0px;
-    float:left;
+    background: url("stem_career_logo.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 39px;
+    margin: 40px 0 0;
+    width: 175px;
 }
 .nav {
     float:right;
