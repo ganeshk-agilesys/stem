@@ -31,10 +31,35 @@
         </ul>
       </div>
     </div>
-    <div style="float:left;width:450px;margin:0px 4px;">
+    <div style="float:left;width:440px;margin:0px 4px;">
+      <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="430" height="220" frameborder="0"></iframe>
 
+      <div style="float:left;">
+        <div style="float:left;"><a href="#"><span id="prev" style="padding:5px;background:gray;float:left;">Prev</span></a></div>
+
+        <div class="slideshow" style="width:420px;float:left;"> 
+          <div class="slide"> 
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+          </div> 
+          <div class="slide"> 
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+          </div> 
+          <div class="slide"> 
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+            <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="120" height="110" frameborder="0"></iframe>
+          </div> 
+        </div> 
+        <div style="float:left;">
+          <a href="#"><span id="next" style="padding:5px;background:gray;float:left;">Next</span></a></div>
+      </div>
     </div>
   </div>
+  
   <hr class="divider" />
   <div  style="float:left;margin:0px 4px 10px 4px;width:920px;padding:5px;">
     <div style="float:left;width:400px;">
@@ -49,7 +74,7 @@
   </div>
 
   <hr class="divider" />
-  <div style="float:left;margin:0px 4px 10px 4px;width:920px;padding:5px;">
+  <div style="float:left;margin:0px 4px 9px 4px;width:920px;padding:5px;">
     <b style="font-size:14px;">Useful Links</b>
     <br/>
     <p style="font-size:13px;color:#666666;">
@@ -112,3 +137,29 @@
 
   </div>
 </div>
+<script type="text/javascript"> 
+  $(document).ready(function() {
+    
+    $('.slideshow').before('<ul id="nav">').cycle({
+      fx: 'scrollHorz',
+      timeout: 0,
+      prev:    '#prev',
+      next:    '#next',
+      pagerAnchorBuilder: function(idx, slide) {
+        // return selector string for existing anchor
+        return '#nav li:eq(' + idx + ') a';
+      }
+    });
+    
+  });
+</script>
+
+<style type="text/css">
+  #slideshow { left: 20px }
+  #nav { width: 300px; margin: 15px }
+  #nav li { width: 50px; float: left; margin: 8px; list-style: none }
+  #nav a { width: 50px; padding: 3px; display: block; border: 1px solid #ccc; }
+  #nav li.activeSlide a { background: #88f }
+  #nav a:focus { outline: none; }
+  #nav img { border: none; display: block }
+</style>
