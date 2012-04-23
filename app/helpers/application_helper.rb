@@ -80,4 +80,19 @@ module ApplicationHelper
 
     html.html_safe
   end
+  
+  def bbcode_to_html(text)
+    custom_image = {
+      'Image' => [
+        /\[img(:.+)?\]([^\[\]].*?)\[\/img\1?\]/im,
+        '<img src="\2" alt="User Supplied Image" />',
+        'Display an image',
+        'Check out this crazy cat: [img]http://catsweekly.com/crazycat.jpg[/img]',
+        :image
+      ]
+    }
+    html = BBRuby.to_html_with_formatting(text, custom_image, true)
+    #strip remaining [tags]
+    html.gsub(/\[[^\[\]]*\]/,'').html_safe
+  end
 end

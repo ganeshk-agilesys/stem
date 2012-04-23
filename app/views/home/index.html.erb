@@ -6,7 +6,7 @@
       <a href="<%=assessment_index_path%>">
         <div class="linkbnr"></div>
       </a>
-      <a href="#">
+      <a href="#" id="homepage_video">
         <div class="linkbnr2"></div>
       </a>
     </div>
@@ -87,6 +87,13 @@
     <%= link_to image_tag("communicatio_color.png", :width=>"177", :height=>"82",:border => 0),"http://www.cisnc.org/" %>
   </div>
   <div class="clear"></div>
+  <div id="light" class="white_content">
+    <b style="font-size:14px;padding-top:5px;">Video Title</b> <%=link_to image_tag("close_btn.png",:size=>"29x29"),"#",:onclick=>"document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';document.body.style.overflow = 'auto';$('.light').find('iframe').remove();",:class=>"line_del",:style=>"float:right"%> 
+    <br class="clear"/>
+    <div class="homepage_video">
+    </div>
+  </div>
+  <div id="fade" class="black_overlay"></div>
 </div>
 
 <script type="text/javascript">
@@ -98,5 +105,47 @@
       delay: -2000
     });
     $('#tabs').tabs();
+    $("#homepage_video").click(function(){
+      document.getElementById('light').style.display='block';
+      document.getElementById('fade').style.display='block';
+      $("body").css("overflow", "hidden");
+      $(".homepage_video").html('<iframe id="abcd" src="http://player.vimeo.com/video/22689471?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+    });
   });
 </script>
+<style type="text/css">
+  /* error_modal styles */
+  .black_overlay{
+    display: none;
+    position: absolute;
+    top: -30%;
+    left: 0%;
+    width: 100%;
+    height: 130% !important;
+    /* height: 1800px !important; */
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+
+  }
+  .white_content {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    width: 475px;
+    height: 300px;
+    padding: 16px;
+    background-color: white;
+    z-index:1002;
+    overflow:hidden;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+  }
+
+  .homepage_video{
+    border:5px solid #000;width:400px; height: 225px;margin-top: 15px; 
+  }
+</style>

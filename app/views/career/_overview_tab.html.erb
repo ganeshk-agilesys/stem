@@ -17,64 +17,54 @@
       <%= image_tag "overview_c.png", :style => "vertical-align: middle;" %>
     </div>
     <div style="float:left;width:780px;margin-left:10px;">
-      <h3 class="title"><b><%= t(:career_description) %></b></h3>
-      <br />
-      <span><%= @occupation["description"] %></span>
+      <span class="title"><%= t(:salary) %></span>
+      <br>
+      <div class="column append-1"><%= t(:low) %> <span><b id="state-low"><%= @occupation.has_key?("low_national_salary") ? number_to_currency(@occupation["low_national_salary"]) : "No Data" %></b></span></div>
+      <div class="column append-1"><%= t(:average) %> <span><b id="state-average"><%= number_to_currency(@occupation["average_national_salary"]) %></b></span></div>
+      <div class="column append-1"><%= t(:high) %> <span><b id="state-high"><%= @occupation.has_key?("high_national_salary") ? number_to_currency(@occupation["high_national_salary"]) : "No Data" %></b></span></div>
       <br /><br />
     </div>
-    <hr class="divider" />
+    <%- if @occupation.has_key?("education_training_and_experiences") -%>
+      <hr class="divider" />
+    <% end %>
   </div>
+
+  <%- if @occupation.has_key?("education_training_and_experiences") -%>
+    <div class="span-29 last prepend-top">
+      <div style="height:70px;width:70px;float:left;">
+        <%= image_tag "icons/overview_d.png", :style => "vertical-align: middle;" %>
+      </div>
+      <div style="float:left;width:780px;margin-left:10px;">
+        <span class="title"><%= t(:what_it_takes) %></span>
+        <br />
+        <%- for etae in @occupation["education_training_and_experiences"] -%>
+          <span><i><%= etae["name"] %></i> - <%= etae["description"] %></span><br />
+        <%- end -%>
+        <br />
+        <%- if @occupation.has_key?("significant_points") -%>
+          <hr class="divider" />
+        <%- end -%>
+      </div>
+    </div>
+  <%- end -%>
+
+
+  <%- if @occupation.has_key?("significant_points") -%>
+    <div class="span-29 last prepend-top append-bottom">
+      <div style="height:70px;width:70px;float:left;">
+        <%= image_tag "icons/overview_e.png", :style => "vertical-align: middle;" %>
+      </div>
+      <div style="float:left;width:780px;margin-left:10px;">
+        <span class="title"><%= t(:did_you_know) %></span>
+        <br />
+        <ul style="margin-left: 15px;">
+          <%- @occupation["significant_points"].each do |point| -%>
+            <li><span><%= point %></span></li>
+          <%- end -%>
+        </ul>
+      </div>
+    </div>
+  <%- end -%>
 </div>
 
-<div class="span-15 prepend-top append-bottom">
-  <div class="span-15 last box2 box_grey">
 
-    <div class="span-15 box_padding">
-      <div class="column">
-        <%= image_tag "icons/ic_assess.png" %>
-      </div>
-      <div class="span-11">
-        <h3><%#= link_to_remote_dialog(t(:view_similar_careers), "assistant", { :url => edit_lattice_assistant_path(:occupation_id => @occupation.id, :section => 7) }, { :title => t(:change_preferences) }) %></h3>
-        <span><%= t(:view_similar_careers_desc) %></span>
-        <br />
-        <div class="right">
-<%#= link_to_remote_dialog(t(:view_now), "assistant", { :url => edit_lattice_assistant_path(:occupation_id => @occupation.id, :section => 7) }, { :title => t(:change_preferences) }) %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="span-15 last prepend-top box2 box_grey">
-    <div class="span-15 box_padding">
-      <div class="column">
-        <%= image_tag "icons/ic_move_up.png" %>
-      </div>
-      <div class="span-11">
-        <h3><%#= link_to(t(:move_up_career), occupation_ladder_path(@occupation)) %></h3>
-        <span><%= t(:move_up_career_desc) %></span>
-        <br />
-        <div class="right">
-<%#= link_to(t(:view_now), occupation_ladder_path(@occupation)) %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="span-15 last prepend-top box2 box_grey">
-    <div class="span-15 box_padding">
-      <%- if @occupation.has_key?("related_careers") -%>
-        <div class="span-15 last">
-          <span class="colon"><strong><%= t(:check_out_related_careers) %></strong></span>
-          <br />
-          <ul style="padding: 0.5em 0; margin-bottom: 0;">
-            <%- for occupation in @occupation["related_careers"].first(5) -%>
-              <li>
-                <%= link_to truncate(occupation["title"], :length => 42), career_show_path(:api_safe_onet_soc_code => occupation["api_safe_onet_soc_code"]), :title => occupation["title"], :style => "" %>
-              </li>
-            <%- end -%>
-          </ul>
-        </div>
-      <%- end -%>
-    </div>
-  </div>
-</div>

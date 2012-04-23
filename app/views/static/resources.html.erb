@@ -31,6 +31,7 @@
         </ul>
       </div>
     </div>
+
     <div style="float:left;width:440px;margin:0px 4px;">
       <iframe src="http://player.vimeo.com/video/2721460?title=0&amp;byline=0&amp;portrait=0" width="430" height="220" frameborder="0"></iframe>
 
@@ -59,7 +60,7 @@
       </div>
     </div>
   </div>
-  
+
   <hr class="divider" />
   <div  style="float:left;margin:0px 4px 10px 4px;width:920px;padding:5px;">
     <div style="float:left;width:400px;">
@@ -68,8 +69,8 @@
       <br/>
       Take a short survey that lets us what you liked and didn't like about the website.
     </div>
-    <div style="float:left;background:green;color:white;padding:8px;margin-top:30px;">
-      Take the survey
+    <div style="float:left;color:white;padding:8px;margin-top:30px;">
+      <%= link_to image_tag("Take-survey.png", :alt=>"Take a survey"),'/static/resources' %>
     </div>
   </div>
 
@@ -100,7 +101,9 @@
       <b style="font-size:13px;">STEM Library</b>
       <ul style="color:#666 !important;">
         <li><%= link_to "Videos","/static/videos",:style => "color=gray;" %></li>
-        <li><%= link_to "STEM Careers(by Industry)","static/industries",:style => "color=#666;" %></li>
+        <li>
+          <%= link_to "STEM Careers(by Industry)","/static/industries",:style => "color=#666;" %>
+        </li>
       </ul>
       <br class="clear" />
       <b style="font-size:13px;">Career Paths</b>
@@ -124,14 +127,15 @@
         <% end %>
       </ul>
     </div>
-
-    <div  style="float:left;width:200px;">
-      <div class="features_tabs span-201">
-        <div style="float:left; "><%= image_tag "STEM_10.png", :width=>"22",:height=>"22" %></div>
-        <h2>Assess</h2>
-        <h3>&nbsp;Yourself</h3>
-        <p>Take our simple 14-question self assessment to find out which careers match you. </p>
-        <div ><%= link_to "Assess Yourself »", assessment_index_path, :class => "linkbtm" %></div>
+    <div class="span-7 rt">
+      <div class="srcbg">
+        <div class="spanL"></div>
+        <div class="grt span-6 last">
+          <h2>Want to know if you’re ready for a STEM career?</h2>
+          <p>Take our simple 14-question self assessment to find out which careers match you.</p>
+          <div class="linkbtm"><%= link_to "Assess Yourself »", assessment_index_path, :class => "linkbtm" %></div>
+        </div>
+        <div class="spanR"></div>
       </div>
     </div>
 

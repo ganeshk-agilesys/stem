@@ -1,0 +1,14 @@
+<%- content_for :javascript do -%>
+  <script src="//s7.addthis.com/js/250/addthis_widget.js" type="text/javascript"></script>
+  <script type="text/javascript" charset="utf-8">
+    var addthis_config = {
+      username: "futuresinc",
+      services_compact: "facebook,twitter,myspace,linkedin,digg,blogger,stumbleupon,delicious,email",
+      services_expanded: "facebook,twitter,myspace,linkedin,digg,blogger,stumbleupon,delicious,email",
+      data_use_cookies: false,
+      data_use_flash: false,
+      ui_click: true
+    };
+  </script>
+<%- end -%>
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php"><%= image_tag 'bg_button_share.png', :alt => 'Share', :class => 'button' %></a>

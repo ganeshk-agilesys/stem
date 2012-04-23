@@ -1,6 +1,169 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<div class=" wrapperbanr">
+  <div class="span-46 last wearhouse">
+    <div class="box2 box_grey span-46 prepend-top">
+      <div style="padding-bottom:18px" class="prepend-1 append-1 prepend-top span-44">
+        <div class="column span-206">
+          <%- if @job_post.has_key?("company") -%>
+  <%#= image_tag @job_post.logo_public_filename(:large) %>
+  <%#- else -%>
+            <%= image_tag "paperclip_files/companies/logos/missing_large.jpg" %>
+          <%- end -%>
+        </div>
+        <div style="position:relative; min-height: 150px" class="column span-36 last">
+          <div class="column">
+            <h1><%= @job_post["title"] %></h1>
+            <br /><br />
+            &nbsp;<%= t(:at) %> 
+            <a class="bold large" href="#"><%= @job_post["company"] %></a>
+          </div>
+          <span><%= truncate_html(@job_post["company"]["description"].bbcode_to_html, :length => 350)  if @job_post.has_key?("company") && @job_post["company"]["description"]%></span>
+          <div class="bottom_right">
+            <div class="rt indent"><%= render 'commons/add_this' %></div>
+            <div class="rt indent">
+              <a title="View Company Profile" href="#">
+                <%= image_tag "view_company_profile.png",:alt => "View Company Profile" %>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
 
-<%= "show.html" %>
+    <div class="box2 span-46 prepend-top append-bottom">
+      <div class="prepend-1 append-1 prepend-top append-bottom span-44">
+        <div class="span-32">
+          <div class="span-31 append-1" style="float:left;">
+            <div style="width:50px;float:left;">
+              <%= image_tag("profile/j_profile_description.png") %>
+            </div>
+            <div class="last" style="width:555px;float:left;">
+              <b>Job Description</b>
+              <hr class="divider"/>
+              <span>
+                <%= bbcode_to_html(@job_post["description"]) %>
+<%#= (@job_post["description"]).bbcode_to_html({}, false) %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="box2 box_grey span-11 last">
+          <div style="margin: 10px">
+
+            <%= image_tag("profile/j_profile_overview.png", :class => "middle") %> <span style="font-weight: bold;">Job Overview</span>
+            <hr class="divider">
+
+
+            <%- if @job_post.has_key?("salary_type") && @job_post["salary_type"].present?-%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:salary) %></label><br />
+                <%- if @job_post["salary_type"] == 'specified_amount' -%>
+                  <span><%= number_to_currency(@job_post["salary"], :unit => '$', :separator => ".", :delimiter => ",")  if @job_post.has_key?("salary") && @job_post["salary"].present?%></span>
+                <%- else -%>
+                  <span><%= t(@job_post["salary_type"]) if @job_post["salary_type"].present?%></span>
+                <%- end -%>
+              </div>
+            <%- end -%>
+
+
+            <div style="margin-top: 10px;">
+              <label style="font-weight: bold">Location</label><br>
+              <span><%= @job_post["city"] %>,<%= @job_post["state"] %> </span>
+            </div>
+
+            <%- if @job_post.has_key?("job_type") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold">Job Type</label><br>
+                <span>
+                  <%= @job_post["job_type"] %>
+                </span>
+              </div>
+            <%- end -%>
+
+            <% if @job_post.has_key?("requisition_number") %>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold">Requisition#</label><br>
+                <span><%=@job_post["requisition_number"]%></span>
+              </div>
+            <% end %>
+
+            <%- if @job_post.has_key?("close_on") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:apply_by) %></label><br />
+                <span><%= @job_post["close_on"].to_time.strftime("%B #{@job_post["close_on"].to_time.day}, %Y") %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("duration") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:duration_days) %></label><br />
+                <span><%= @job_post["duration"] %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("education_level") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:preferred_education_level) %></label><br />
+                <span><%= t(@job_post["education_level"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("career_level") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:preferred_career_level) %></label><br />
+                <span><%= t(@job_post["career_level"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("job_function") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:job_function) %></label><br />
+                <span><%= t(@job_post["job_function"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("job_site") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:job_site) %></label><br />
+                <span><%= t(@job_post["job_site"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("dress_code") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:dress_code) %></label><br />
+                <span><%= t(@job_post["dress_code"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("job_hours_type") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:schedule) %></label><br />
+                <span><%= t(@job_post["job_hours_type"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("travel_time") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:travel) %></label><br />
+                <span><%= t(@job_post["travel_time"]) %></span>
+              </div>
+            <%- end -%>
+
+            <%- if @job_post.has_key?("benefits") -%>
+              <div style="margin-top: 10px;">
+                <label style="font-weight: bold"><%= t(:benefits) %></label><br />
+                <%- @job_post["benefits"].each do |benefit| -%>
+                  <span><%= t(benefit) %></span><br />
+                <%- end -%>
+              </div>
+            <%- end -%>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="clear"></div>
+</div>
