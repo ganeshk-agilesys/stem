@@ -1,0 +1,448 @@
+.scrollable {
+	float:left;
+	position:relative;
+	overflow:hidden;
+	width:503px;
+	height:100px;
+	border:1px solid #ccc;
+        margin-top: 8px;
+        margin-bottom: 8px;
+	background:url(welcome/scrollable_gradient.png) repeat-x
+}
+.scrollable .items {
+	width:20000em;
+	position:absolute;
+	clear:both
+}
+.items div {
+	float:left;
+	width:505px
+}
+.scrollable img {
+	float:left;
+	margin:10px 0 10px 15px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:100px;
+	height:75px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px
+}
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default
+}
+a.browse {
+	background:url(welcome/scrollable_buttons.png) no-repeat;
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin:40px 10px;
+	cursor:pointer;
+	font-size:1px;
+        margin-left:30px;
+}
+a.right {
+	background-position:0 -30px;
+	clear:right;
+	margin-right:0px
+}
+a.right:hover {
+	background-position:-30px -30px
+}
+a.right:active {
+	background-position:-60px -30px
+}
+a.left {
+	margin-left:0px
+}
+a.left:hover {
+	background-position:-30px 0
+}
+a.left:active {
+	background-position:-60px 0
+}
+a.disabled {
+	visibility:hidden !important
+}
+div.scrollable_container {
+	height:120px;
+	margin-left:10px
+}
+.featured_companies>.scrollable {
+	width:950px;
+	height:110px;
+	background:none;
+	border:none
+}
+.featured_companies .items div {
+	float:left;
+	width:115px;
+	margin-right:20px
+}
+.featured_companies>.scrollable img {
+	float:left;
+	margin:10px 0 10px 15px;
+	padding:2px;
+	border:none;
+	width:115px;
+	height:75px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px
+}
+blockquote, q {
+	quotes:none
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content:'';
+	content:none
+}
+:focus {
+	outline:0
+}
+ins {
+	text-decoration:none
+}
+del {
+	text-decoration:line-through
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0
+}
+.clear {
+	clear:both
+}
+div#content-top {
+	background:url(welcome/bg-container-top.jpg) bottom left no-repeat;
+	margin:15px auto 0 auto;
+	width:962px;
+	height:7px
+}
+div#content {
+	background:url(welcome/bg-container-middle.jpg) top left repeat-y;
+	margin:0 auto;
+	padding:5px 0;
+	width:962px
+}
+div#content-bottom {
+	background:url(welcome/bg-container-bottom.jpg) top left no-repeat;
+	margin:0 auto;
+	width:962px;
+	height:7px
+}
+p.learn-more {
+	text-align:right;
+	margin-bottom:5px;
+	padding:0
+}
+p.learn-more a {
+	text-decoration:none;
+	color:#0277ba;
+	font-size:90%;
+	font-weight:bold
+}
+p.learn-more a:hover {
+	text-decoration:underline
+}
+div#header {
+	border-bottom:solid #578edf 6px
+}
+#slider {
+	width:938px;
+	margin:0 auto;
+	position:relative
+}
+#slider .scroll {
+	height:268px;
+	width:938px;
+	overflow:auto;
+	overflow-x:hidden;
+	position:relative;
+	clear:left;
+	background:#FFFFFF scroll left bottom
+}
+#slider .scrollContainer div.panel {
+	padding:20px;
+	height:268px;
+	width:928px
+}
+#slider ul.navigation {
+	background:url(welcome/slider-nav-bg.jpg) top left repeat-x;
+	height:38px
+}
+#slider ul.navigation li {
+	display:inline-block;
+	background:url(welcome/bg-tabs.jpg) top left no-repeat;
+	background-position:-290px 0;
+	height:38px;
+	width:145px;
+	float:left
+}
+#slider ul.navigation li:hover {
+	background:url(welcome/bg-tabs.jpg) top left no-repeat;
+	background-position:-145px 0
+}
+#slider ul.navigation a {
+	display:block;
+	padding:13px 0 13px 0;
+	text-align:center;
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold
+}
+#slider ul.navigation a.selected {
+	background:url(welcome/bg-tabs.jpg) top left no-repeat
+}
+#slider ul.navigation a:focus {
+	outline:none
+}
+#slider .scrollButtons {
+	position:absolute;
+	top:150px;
+	cursor:pointer
+}
+#slider .scrollButtons.left {
+	left:-20px
+}
+#slider .scrollButtons.right {
+	right:-20px
+}
+#slider .hide {
+	display:none
+}
+#slider div.scrollContainer div#job-seekers {
+	background:url(welcome/slider-job-seekers-bg.jpg) top left no-repeat
+}
+#slider div.scrollContainer div#employers {
+	background:url(welcome/slider-employers-bg.jpg) top left no-repeat
+}
+#slider div.scrollContainer div#educators {
+	background:url(welcome/slider-educators-bg.jpg) top left no-repeat
+}
+#slider ul.sub-navigation {
+	background:url(welcome/slider-subnav-bg.jpg) top left repeat-x;
+	border-top:solid 1px #fff;
+	height:38px;
+	width:938px
+}
+#slider ul.sub-navigation li {
+	display:inline;
+	height:38px;
+	background:url(welcome/slider-subnav-divider.jpg) center right no-repeat;
+	padding:0px 85px;
+	float:left
+}
+#slider ul.sub-navigation li.last {
+	padding-right:0;
+	background:none
+}
+#slider ul.sub-navigation li a {
+	display:block;
+	margin-top:13px;
+	text-decoration:none;
+	color:#fff;
+	font-weight:bold
+}
+#slider ul.sub-navigation li a:hover {
+	text-decoration:underline
+}
+#slider div.resources_label {
+	line-height:40px;
+	margin-right:20px
+}
+#slider ul.title {
+	margin:20px 0 0 15px
+}
+#slider ul.title li.title {
+	font-size:250%;
+	font-weight:bold;
+	margin-bottom:15px
+}
+#slider ul.title li.sub-title {
+	font-size:130%;
+	font-weight:bold
+}
+#slider span.action-title {
+	font-size:170%
+}
+div.search {
+	margin:40px 0 0 15px
+}
+div.search form {
+	margin-top:10px
+}
+div.search form div {
+	float:left
+}
+div.search form div.where {
+	margin:0 15px
+}
+div.search input, textarea {
+	padding:9px;
+	border:solid 1px #E5E5E5;
+	outline:0;
+	font-size:13px/100%;
+	width:200px;
+	background:#fff url(welcome/bg_form.png) left top repeat-x;
+	background:-webkit-gradient(linear, left top, left 25, from(#fff), color-stop(4%, #eee), to(#fff));
+	background:-moz-linear-gradient(top, #fff, #eee 1px, #fff 25px);
+	box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-moz-box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 8px
+}
+div.search textarea {
+	width:400px;
+	max-width:400px;
+	height:150px;
+	line-height:150%
+}
+div.search input:hover, textarea:hover, input:focus, textarea:focus {
+	border-color:#C9C9C9;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.15) 0px 0px 8px
+}
+div.search .form label {
+	margin-left:10px;
+	color:#999999
+}
+div.search input.image {
+	margin:0;
+	padding:0;
+	border:0;
+	background:none;
+	width:144px
+}
+div.search form p {
+	position:relative;
+	margin:0 0
+}
+div.search form p label {
+	position:absolute;
+	top:13px;
+	left:0;
+	cursor:text
+}
+div.search form p textarea, form p input {
+	border:solid 1px #777
+}
+div.search form div.field p label {
+	color:#555
+}
+div#video-player {
+	float:left;
+	width:625px;
+	margin:11px 0px 0px 11px
+}
+div#video-player div.ui-tabs-panel {
+	width:605px;
+	padding-top:15px
+}
+div#video-player div.ui-tabs-panel div.video-container {
+	height:315px;
+	margin:0 0 15px 20px
+}
+div#video-player div.ui-tabs-panel a.video {
+	margin-right:2px
+}
+div#video-player div.ui-tabs-panel a.video:hover {
+	cursor:pointer
+}
+div#right-column {
+	float:right;
+	margin:12px 12px 0 0
+}
+div#right-column ul.rc-top {
+	background:url(welcome/bg-column-top.jpg) bottom left no-repeat;
+	width:299px;
+	height:41px;
+	font-size:120%
+}
+div#right-column ul.rc-top li.title {
+	float:left;
+	padding:10px
+}
+div#right-column ul.rc-top li.openings {
+	float:right;
+	padding:10px
+}
+div#right-column div.rc-body {
+	background:url(welcome/bg-column-middle.jpg) top left repeat-y;
+	width:259px;
+	padding:0px 20px 5px 20px;
+	color:#3d3d3d
+}
+div#right-column div.rc-body div.opening {
+	border-bottom:solid 1px #e4e4e4;
+	padding:13px 0
+}
+div#right-column div.rc-body div.last {
+	border:none
+}
+div#right-column div.rc-body div.opening a {
+	color:#0277ba;
+	text-decoration:none
+}
+div#right-column div.rc-body div.opening a:hover {
+	text-decoration:underline
+}
+div#right-column div.rc-body div.opening img.thumb {
+	float:left
+}
+div#right-column div.rc-body div.opening ul.details {
+	float:left;
+	margin-left:8px;
+	line-height:16px
+}
+div#right-column div.rc-body div.opening ul.details li {
+	font-weight:bold
+}
+div#right-column div.rc-body div.opening ul.details li.view-more {
+	font-weight:normal;
+	font-size:80%
+}
+div#right-column div.social img {
+	margin:10px 1px 4px 1px
+}
+div#right-column div.rc-bottom {
+	background:url(welcome/bg-column-bottom.jpg) top left no-repeat;
+	width:299px;
+	height:10px
+}
+div#partners {
+	margin:0 0 0 12px;
+	color:#777
+}
+div#partners hr {
+	border:none 0;
+	border-top:2px solid #dcdcdc;
+	height:1px;
+	margin:7px -6px 15px
+}
+.ui-helper-reset {
+	font-size:90%
+}
+.ui-icon {
+	display:block;
+	text-indent:-99999px;
+	overflow:hidden;
+	background-repeat:no-repeat
+}
+.ui-tabs .ui-tabs-nav li {
+	height:25px;
+	background:#fff
+}
+.ui-tabs .ui-tabs-nav li:hover {
+	background-color:#999
+}
+.ui-tabs .ui-tabs-nav li a {
+	font-weight:bold
+}
+.ui-tabs .ui-tabs-nav li a:hover {
+	color:#fff
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover {
+	color:#1574B6
+}

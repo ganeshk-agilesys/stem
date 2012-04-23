@@ -11,7 +11,8 @@ gem 'addressable'
 gem 'json'
 gem 'will_paginate', '~> 3.0.0'
 gem 'rdiscount'
-
+gem 'truncate_html'
+gem 'bb-ruby', :git => 'http://github.com/tomharris/bb-ruby.git'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
