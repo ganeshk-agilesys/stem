@@ -40,11 +40,7 @@
 </div>    
 <div style="float:left;width:650px;margin-left:15px;">
   <div >
-<%#= raise @industry["image_url"].inspect %>
-
-<%# raise @industry["image_url"].inspect %>
-<%#= image_tag @industry["image_url"].gsub('normal','large') if @industry["image_url"].present? %>
-    <%= image_tag "https://usmilitarypipeline.com/assets/industries/advanced_manufacturing_large.jpg" %>
+    <%= industry_image(@industry["image_url"],"large") %>
   </div>
   <div >
     <h2 class="signup"><%= @industry["name"] %></h2>

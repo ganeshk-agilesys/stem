@@ -732,9 +732,7 @@ h2.signup{color: #096BAF;font-size: 1.2em;font-weight: bold;float:none; padding:
 .box_grey {
     background-color: #F5F5F5;
 }
-.span-44 {
-    width: 875px;
-}
+
 .half_padding {
     padding: 0.75em 10px;
 }
@@ -797,7 +795,7 @@ ul.horizontal_info_list li a:last-child:after {
 }
 .scrollable img {
 	float:left;
-	margin:10px 0 10px 15px;
+	margin:10px 0 10px 10px;
 	background-color:#fff;
 	padding:2px;
 	border:1px solid #ccc;
@@ -817,7 +815,7 @@ a.browse {
 	width:30px;
 	height:30px;
 	float:left;
-	margin:40px 10px;
+	margin:40px 5px;
 	cursor:pointer;
 	font-size:1px
 }
@@ -846,7 +844,7 @@ a.disabled {
 }
 div.scrollable_container {
 	height:120px;
-	margin-left:10px
+	margin-left:4px
 }
 .featured_companies>.scrollable {
 	width:950px;
@@ -1058,6 +1056,7 @@ div#partners hr {
 .ui-helper-reset {
 	font-size:90%
 }
+.ui-widget-content{border: 0px !important;}
 .ui-icon {
 	display:block;
 	text-indent:-99999px;
@@ -1065,20 +1064,28 @@ div#partners hr {
 	background-repeat:no-repeat
 }
 .ui-tabs .ui-tabs-nav li {
-	height:25px;
-	background:#fff
+	height:20px;
+	background:#fff;
+      
+}
+.ui-tabs .ui-tabs-panel {
+    background: none repeat scroll 0 0 transparent;
+    border: 1px solid #DDDDDD !important;
+    display: block;
+    padding: 3px 10px;
 }
 .ui-tabs .ui-tabs-nav li:hover {
-	background-color:#999
+	background:url("tab-mid.png") repeat-x scroll left top transparent;
 }
 .ui-tabs .ui-tabs-nav li a {
 	font-weight:bold
 }
 .ui-tabs .ui-tabs-nav li a:hover {
-	color:#fff
+	color:#1574B6;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover {
-	color:#1574B6
+	color:#1574B6;
+        background:url("tab-mid.png") repeat-x scroll left top transparent;
 }
 
 

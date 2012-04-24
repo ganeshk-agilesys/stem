@@ -1,7 +1,7 @@
 <div id="message"></div>
 
 <div class="span-45 last half_padding">
-  <div class="span-44 last half_padding box2 box_grey">
+  <div class="span-44-1 last half_padding box2 box_grey">
     <h3 class="title"><b><%= t(:assess_your_job_skills_for_this_career_path) %></b></h3><br/>
     <div class="span-3">
       <%= image_tag "jp_asst.png" %>
@@ -10,15 +10,18 @@
       <span><%= t(:job_skills_tab_text) %></span>
     </div>
   </div>
+   <div class="clear"></div>
 
   <%- if @occupation.has_key?("skills")-%>
     <%- @occupation["skills"].each do |skill| -%>
       <div class="span-45 last prepend-top box2 skill_section">
-        <div class="span-44 box_grey half_padding" style="font-size: 13px;">
+        <div class="span-44-1 box_grey half_padding" style="font-size: 13px;">
           <%= t(:skill_category) %>: <%= skill["title"] %><br/>
           <%= t(:importance) %>: <%= stars_for(skill["stars"]) %>
         </div>
+        <div class="clear"></div>
       </div>
+  <div class="clear"></div>
     <%- end -%>
   <%- end -%>
 </div>
