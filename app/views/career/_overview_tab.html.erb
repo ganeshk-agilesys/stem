@@ -12,50 +12,50 @@
     <hr class="divider" />
   </div>
 
-  <div class="span-29 last prepend-top">
+  <div class="span-29 last">
     <div style="height:70px;width:70px;float:left;">
       <%= image_tag "overview_c.png", :style => "vertical-align: middle;" %>
     </div>
     <div style="float:left;width:780px;margin-left:10px;">
-      <span class="title"><%= t(:salary) %></span>
+      <h3 class="title"><b><%= t(:salary) %></b></h3>
       <br>
       <div class="column append-1"><%= t(:low) %> <span><b id="state-low"><%= @occupation.has_key?("low_national_salary") ? number_to_currency(@occupation["low_national_salary"]) : "No Data" %></b></span></div>
       <div class="column append-1"><%= t(:average) %> <span><b id="state-average"><%= number_to_currency(@occupation["average_national_salary"]) %></b></span></div>
       <div class="column append-1"><%= t(:high) %> <span><b id="state-high"><%= @occupation.has_key?("high_national_salary") ? number_to_currency(@occupation["high_national_salary"]) : "No Data" %></b></span></div>
       <br /><br />
     </div>
-    <%- if @occupation.has_key?("education_training_and_experiences") -%>
+    <%- if @occupation.has_key?("education_training_and_experiences") or @occupation.has_key?("significant_points")-%>
       <hr class="divider" />
     <% end %>
   </div>
 
   <%- if @occupation.has_key?("education_training_and_experiences") -%>
-    <div class="span-29 last prepend-top">
+    <div class="span-29 last">
       <div style="height:70px;width:70px;float:left;">
-        <%= image_tag "icons/overview_d.png", :style => "vertical-align: middle;" %>
+        <%= image_tag "overview_d.png", :style => "vertical-align: middle;" %>
       </div>
       <div style="float:left;width:780px;margin-left:10px;">
-        <span class="title"><%= t(:what_it_takes) %></span>
+        <h3 class="title"><b><%= t(:what_it_takes) %></b></h3>
         <br />
         <%- for etae in @occupation["education_training_and_experiences"] -%>
           <span><i><%= etae["name"] %></i> - <%= etae["description"] %></span><br />
         <%- end -%>
         <br />
-        <%- if @occupation.has_key?("significant_points") -%>
-          <hr class="divider" />
-        <%- end -%>
       </div>
+      <%- if @occupation.has_key?("significant_points") -%>
+        <hr class="divider" />
+      <%- end -%>
     </div>
   <%- end -%>
 
 
-  <%- if @occupation.has_key?("significant_points") -%>
-    <div class="span-29 last prepend-top append-bottom">
+  <%- if @occupation.has_key?("significant_points") && @occupation["significant_points"].present? -%>
+    <div class="span-29 last">
       <div style="height:70px;width:70px;float:left;">
-        <%= image_tag "icons/overview_e.png", :style => "vertical-align: middle;" %>
+        <%= image_tag "overview_e.png", :style => "vertical-align: middle;" %>
       </div>
       <div style="float:left;width:780px;margin-left:10px;">
-        <span class="title"><%= t(:did_you_know) %></span>
+        <h3 class="title"><b><%= t(:did_you_know) %></b></h3>
         <br />
         <ul style="margin-left: 15px;">
           <%- @occupation["significant_points"].each do |point| -%>

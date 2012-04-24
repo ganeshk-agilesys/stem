@@ -20,7 +20,7 @@
           <h3 class="sideHeader"><%= t(:top_careers) %></h3>
           <ul class="topCareer">
             <%- @careers.each do |career| -%>
-              <li><%= link_to truncate(career["title"], :length => 38), "javascript:void(0);", :title => h(career["title"]) %></li>
+              <li><%= link_to truncate(career["title"], :length => 38), career_show_path(:api_safe_onet_code => career["api_safe_onet_soc_code"]), :title => h(career["title"]) %></li>
             <%- end -%>
           </ul>
         </div>
@@ -41,7 +41,9 @@
 <div style="float:left;width:650px;margin-left:15px;">
   <div >
 <%#= raise @industry["image_url"].inspect %>
-<%#= image_tag @industry["image_url"].gsub('normal','large') %>
+
+<%# raise @industry["image_url"].inspect %>
+<%#= image_tag @industry["image_url"].gsub('normal','large') if @industry["image_url"].present? %>
     <%= image_tag "https://usmilitarypipeline.com/assets/industries/advanced_manufacturing_large.jpg" %>
   </div>
   <div >
@@ -55,7 +57,7 @@
       <%= t(:industry_education) %>
     </h2>
     <p>
-      <%= markdown(@industry["education"]) %>
+      <%= markdown(@industry["education"]) if @industry["education"].present?%>
     </p>
 
   </div>

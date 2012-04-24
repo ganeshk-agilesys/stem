@@ -1023,7 +1023,7 @@ div#header {
 #slider span.action-title {
 	font-size:170%
 }
-.video_player {padding:0px 0px 0px 12px;}
+/*.video_player {padding:0px 0px 0px 12px;}*/
 div#video-player {
 	float:left;
 	width:625px;
@@ -1082,5 +1082,19 @@ div#partners hr {
 }
 
 
+.nav ul .click {
+ background:url(btn_left_08.png) right no-repeat;
+}
+
+.nav ul .click a {
+ background:url(btn_left_06.png) left no-repeat;
+ height:24px;
+ color:#666;
+}
+
+.nav ul .click a span  {
+ background:url(nav_rpt.png) repeat-x;
+ padding:6px 0px 6px;
+}
 
 
