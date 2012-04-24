@@ -14,8 +14,8 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0" >
             <% @questions.each_with_index do |q,i| %>
               <tr class="<%= cycle('even','') %>">
-                <td width="10%"><%=i+1%>.</td>
-                <td width="90%">
+                <td width="5%" valign="top"><%=i+1%>.</td>
+                <td width="95%">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td colspan="5"><b><%= q["text"] %></b></td>
