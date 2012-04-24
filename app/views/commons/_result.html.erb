@@ -12,8 +12,10 @@
             <% if occupation.has_key?("average_national_salary")%>
               <li>Avg. National Salary: <%= number_to_currency(occupation["average_national_salary"], :precision => 0) %></li>
             <% end %>
-            <%- if occupation.has_key?("state_salaries") -%>
-              <li><%= t(:average)%> <%= occupation["state_salaries"]["state"] %> <%= t(:salary) %>: <%= number_to_currency(occupation["state_salaries"], :precision => 0) %></li>
+
+            <%- if occupation.has_key?("state_salaries") && params[:state_id].present? && occupation["state_salaries"].collect{|a| a["state"]}.index(params[:state_id]).present?-%>
+              <li><%= t(:average)%> <%= params[:state_id] %> <%= t(:salary) %>: 
+                <%= number_to_currency((occupation["state_salaries"][occupation["state_salaries"].collect{|a| a["state"]}.index(params[:state_id])]["average_salary"]), :precision => 0) %></li>
             <%- end -%>      
             <%- if occupation.has_key?("education_level_number") -%>
               <li>Education: <%= occupation["education_level_number"] %></li>

@@ -749,3 +749,338 @@ h2.signup{color: #096BAF;font-size: 1.2em;font-weight: bold;float:none; padding:
 .wearhouse h4{font-size:1.2em;}
 .wearhouse h1{font-size:1.1em;}
 .wearhouse .large{font-size:1.1em;line-height:2.5em;color:#1574B6;margin-bottom:1.25em;}
+
+
+
+
+ul.horizontal_info_list {
+    float: left;
+    margin: 0;
+}
+ul.horizontal_info_list li {
+    float: left;
+    list-style: none outside none;
+}
+ul.horizontal_info_list li:after {
+    content: "-";
+    padding: 5px;
+}
+ul.horizontal_info_list li:last-child:after {
+    content: "";
+}
+ul.horizontal_info_list li a:after {
+    content: ",";
+}
+ul.horizontal_info_list li a:last-child:after {
+    content: "";
+}
+
+
+
+.scrollable {
+	float:left;
+	position:relative;
+	overflow:hidden;
+	width:486px;
+	height:100px;
+	border:1px solid #ccc;
+	background:url(welcome/scrollable_gradient.png) repeat-x
+}
+.scrollable .items {
+	width:20000em;
+	position:absolute;
+	clear:both
+}
+.items div {
+	float:left;
+	width:505px
+}
+.scrollable img {
+	float:left;
+	margin:10px 0 10px 15px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:100px;
+	height:75px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px
+}
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default
+}
+a.browse {
+	background:url(scrollable_buttons.png) no-repeat;
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	margin:40px 10px;
+	cursor:pointer;
+	font-size:1px
+}
+a.right {
+	background-position:0 -30px;
+	clear:right;
+	margin-right:0px
+}
+a.right:hover {
+	background-position:-30px -30px
+}
+a.right:active {
+	background-position:-60px -30px
+}
+a.left {
+	margin-left:0px
+}
+a.left:hover {
+	background-position:-30px 0
+}
+a.left:active {
+	background-position:-60px 0
+}
+a.disabled {
+	visibility:hidden !important
+}
+div.scrollable_container {
+	height:120px;
+	margin-left:10px
+}
+.featured_companies>.scrollable {
+	width:950px;
+	height:110px;
+	background:none;
+	border:none
+}
+.featured_companies .items div {
+	float:left;
+	width:115px;
+	margin-right:20px
+}
+.featured_companies>.scrollable img {
+	float:left;
+	margin:10px 0 10px 15px;
+	padding:2px;
+	border:none;
+	width:115px;
+	height:75px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px
+}
+
+div#content-top {
+	background:url(welcome/bg-container-top.jpg) bottom left no-repeat;
+	margin:15px auto 0 auto;
+	width:962px;
+	height:7px
+}
+div#content {
+	background:url(welcome/bg-container-middle.jpg) top left repeat-y;
+	margin:0 auto;
+	padding:5px 0;
+	width:962px
+}
+div#content-bottom {
+	background:url(welcome/bg-container-bottom.jpg) top left no-repeat;
+	margin:0 auto;
+	width:962px;
+	height:7px
+}
+p.learn-more {
+	text-align:right;
+	margin-bottom:5px;
+	padding:0
+}
+p.learn-more a {
+	text-decoration:none;
+	color:#0277ba;
+	font-size:90%;
+	font-weight:bold
+}
+p.learn-more a:hover {
+	text-decoration:underline
+}
+div#header {
+	border-bottom:solid #578edf 6px
+}
+#slider {
+	width:938px;
+	margin:0 auto;
+	position:relative
+}
+#slider .scroll {
+	height:268px;
+	width:938px;
+	overflow:auto;
+	overflow-x:hidden;
+	position:relative;
+	clear:left;
+	background:#FFFFFF scroll left bottom
+}
+#slider .scrollContainer div.panel {
+	padding:20px;
+	height:268px;
+	width:928px
+}
+#slider ul.navigation {
+	background:url(welcome/slider-nav-bg.jpg) top left repeat-x;
+	height:38px
+}
+#slider ul.navigation li {
+	display:inline-block;
+	background:url(welcome/bg-tabs.jpg) top left no-repeat;
+	background-position:-290px 0;
+	height:38px;
+	width:145px;
+	float:left
+}
+#slider ul.navigation li:hover {
+	background:url(welcome/bg-tabs.jpg) top left no-repeat;
+	background-position:-145px 0
+}
+#slider ul.navigation a {
+	display:block;
+	padding:13px 0 13px 0;
+	text-align:center;
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold
+}
+#slider ul.navigation a.selected {
+	background:url(welcome/bg-tabs.jpg) top left no-repeat
+}
+#slider ul.navigation a:focus {
+	outline:none
+}
+#slider .scrollButtons {
+	position:absolute;
+	top:150px;
+	cursor:pointer
+}
+#slider .scrollButtons.left {
+	left:-20px
+}
+#slider .scrollButtons.right {
+	right:-20px
+}
+#slider .hide {
+	display:none
+}
+#slider div.scrollContainer div#job-seekers {
+	background:url(welcome/slider-job-seekers-bg.jpg) top left no-repeat
+}
+#slider div.scrollContainer div#employers {
+	background:url(welcome/slider-employers-bg.jpg) top left no-repeat
+}
+#slider div.scrollContainer div#educators {
+	background:url(welcome/slider-educators-bg.jpg) top left no-repeat
+}
+#slider ul.sub-navigation {
+	background:url(welcome/slider-subnav-bg.jpg) top left repeat-x;
+	border-top:solid 1px #fff;
+	height:38px;
+	width:938px
+}
+#slider ul.sub-navigation li {
+	display:inline;
+	height:38px;
+	background:url(welcome/slider-subnav-divider.jpg) center right no-repeat;
+	padding:0px 85px;
+	float:left
+}
+#slider ul.sub-navigation li.last {
+	padding-right:0;
+	background:none
+}
+#slider ul.sub-navigation li a {
+	display:block;
+	margin-top:13px;
+	text-decoration:none;
+	color:#fff;
+	font-weight:bold
+}
+#slider ul.sub-navigation li a:hover {
+	text-decoration:underline
+}
+#slider div.resources_label {
+	line-height:40px;
+	margin-right:20px
+}
+#slider ul.title {
+	margin:20px 0 0 15px
+}
+#slider ul.title li.title {
+	font-size:250%;
+	font-weight:bold;
+	margin-bottom:15px
+}
+#slider ul.title li.sub-title {
+	font-size:130%;
+	font-weight:bold;
+}
+#slider span.action-title {
+	font-size:170%
+}
+.video_player {padding:0px 0px 0px 12px;}
+div#video-player {
+	float:left;
+	width:625px;
+	margin:11px 0px 0px 11px;
+	padding:0px 0px 0px 12px;
+}
+div#video-player div.ui-tabs-panel {
+	width:605px;
+	padding-top:15px
+}
+div#video-player div.ui-tabs-panel div.video-container {
+	height:315px;
+	margin:0 0 15px 20px
+}
+div#video-player div.ui-tabs-panel a.video {
+	margin-right:2px
+}
+div#video-player div.ui-tabs-panel a.video:hover {
+	cursor:pointer
+}
+
+div#partners {
+	margin:0 0 0 12px;
+	color:#777
+}
+div#partners hr {
+	border:none 0;
+	border-top:2px solid #dcdcdc;
+	height:1px;
+	margin:7px -6px 15px
+}
+.ui-helper-reset {
+	font-size:90%
+}
+.ui-icon {
+	display:block;
+	text-indent:-99999px;
+	overflow:hidden;
+	background-repeat:no-repeat
+}
+.ui-tabs .ui-tabs-nav li {
+	height:25px;
+	background:#fff
+}
+.ui-tabs .ui-tabs-nav li:hover {
+	background-color:#999
+}
+.ui-tabs .ui-tabs-nav li a {
+	font-weight:bold
+}
+.ui-tabs .ui-tabs-nav li a:hover {
+	color:#fff
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover {
+	color:#1574B6
+}
+
+
+
+
