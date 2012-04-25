@@ -19,14 +19,14 @@
     <div class="bgtp"></div>
     <div class="whtbg">
       <!--Menu starts-->
-      <%= render "layouts/menu" %>
+      <%= render :partial => "layouts/menu" %>
     </div>
     <div class="orng_bg">
       <!--Main container starts-->
       <%= yield %>
       <!--End of Main container-->
       <!--Footer starts-->
-      <%= render "layouts/footer" %>
+      <%= render :partial => "layouts/footer" %>
     </div>
   </body>
 </html>

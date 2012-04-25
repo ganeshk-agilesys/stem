@@ -26,38 +26,28 @@
         </div>
         <br class="clear"/>
       <%- end -%>
-      <%- unless @video.blank? -%>
-        <div>
-          <h3 class="sideHeader"><%= t(:ditl) %></h3>
-          <%= video_player_dialog("video_player", @video.title, @video) %>
-          <div class="column span-13" style="position: relative; cursor: pointer;", title="<%= @video.title %>" onclick="return dialog('video_player', { width: '500px', height: '410px' });">
-          <%= image_tag @video.thumbnail_url, :alt => @video.title, :width => "255", :class => "overlay" %>
-          <%= image_tag "dialog/play.png", :alt => @video.title, :style => "position: absolute; top: 65px; left: 110px;" %>
-        </div>
+    </div>
+  </div>    
+  <div style="float:left;width:650px;margin-left:15px;">
+    <div >
+      <%= industry_image(@industry["image_url"],"large") %>
+    </div>
+    <div >
+      <h2 class="signup"><%= @industry["name"] %></h2>
+      <%- if hash_has_value?(@industry,"description") -%>
+        <p><%= @industry["description"] %></p>
+      <%- end -%>
+    </div>
+    <%if hash_has_value?(@industry,"education")%>
+      <div>
+        <h2 class="signup">
+          <%= t(:industry_education) %>
+        </h2>
+        <p>
+          <%= markdown(@industry["education"])%>
+        </p>
       </div>
-    <%- end -%>
+    <% end %>
   </div>
-</div>    
-<div style="float:left;width:650px;margin-left:15px;">
-  <div >
-    <%= industry_image(@industry["image_url"],"large") %>
-  </div>
-  <div >
-    <h2 class="signup"><%= @industry["name"] %></h2>
-    <%- unless @industry["description"].blank? -%>
-      <p><%= @industry["description"] %></p>
-    <%- end -%>
-  </div>
-  <div >
-    <h2 class="signup">
-      <%= t(:industry_education) %>
-    </h2>
-    <p>
-      <%= markdown(@industry["education"]) if @industry["education"].present?%>
-    </p>
-
-  </div>
-</div>
-
 </div>
 <%#= render :partial => '/industries/company_logos' %>

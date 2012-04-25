@@ -2,11 +2,14 @@ module ApplicationHelper
   require 'open-uri'
   require 'net/https'
   require 'json'
+  require 'markup_transform/html_strip'
+  include MarkupTransform::HtmlStrip
+  
   SALARY_LEVEL_MIN = %w(10000_dollars 20000_dollars 30000_dollars 40000_dollars 50000_dollars 60000_dollars 70000_dollars 80000_dollars 90000_dollars)
   EDUCATION_LEVEL = %w(less_than_a_high_school_diploma high_school_diploma post_secondary_certificate some_college_courses associates_degree bachelors_degree post_baccalaureate_certificate masters_degree post_masters_certificate first_professional_degree doctoral_degree post_doctoral_training)
   EDUCATION_TYPES = %w(degree_program continuing_education_course online_education certification)
   SORT_OPTIONS = %w(national_salary best_match)
-  INDUSTRIES_FOR_OPTIONS =  JSON.parse(open(URI.escape("http://23.21.178.16/api/v1/industries.json")).read).collect{|a| [a["name"],a["id"]]}
+  INDUSTRIES_FOR_OPTIONS =  JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read).collect{|a| [a["name"],a["id"]]}
   DISTANCE = %w(25_miles 50_miles 75_miles 100_miles)
   DATE_CREATED = %w(since_yesterday last_3_days last_week last_15_days last_30_days last_60_days last_90_days)
   ESTIMATED_SEPARATION = %w(within_the_next_week within_the_next_month within_the_next_4_months within_the_next_6_months within_the_next_year)
@@ -94,5 +97,9 @@ module ApplicationHelper
     html = BBRuby.to_html_with_formatting(text, custom_image, true)
     #strip remaining [tags]
     html.gsub(/\[[^\[\]]*\]/,'').html_safe
+  end
+    
+  def hash_has_value?(hash={},key)
+    hash.has_key?(key) && hash["#{key}"].present?
   end
 end

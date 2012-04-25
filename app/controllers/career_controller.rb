@@ -1,6 +1,6 @@
 class CareerController < ApplicationController
   def search
-    @industries = JSON.parse(open(URI.escape("http://23.21.178.16/api/v1/industries.json")).read)    
+    @industries = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read)    
   end
    
   def search_result
@@ -35,13 +35,11 @@ class CareerController < ApplicationController
         @occupations << JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")).read)
       end
     end
-#    raise @occupations.inspect
+    #    raise @occupations.inspect
   end
   
   def show
-    @occupation  = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{params[:api_safe_onet_code]}.json")).read)
-    #    
-    #    raise @occupation.inspect
+    @occupation  = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{params[:api_safe_onet_code]}.json")).read) rescue []
   end
 
 end

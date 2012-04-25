@@ -2,39 +2,27 @@
   <div class="span-35 last">
     <div class="span-35 last">
       <div class="span-35 last">
-
         <%- @job_posts.each do |job_post| -%>
           <div class="span-35 last prepend-top results">
             <div class="span-35 last header">
-              <div class="column">
+              <div class="column" style="font-weight:bold;">
                 <%= link_to job_post["title"], job_show_path(:id => job_post["id"].split("-")[0]) %>
               </div>
             </div>
             <ul class="column span-35 last horizontal_info_list">
-              <li class="bold"><%= "#{job_post["company"]} - " %>&nbsp;</li>
-              <li class="quiet"><%= "#{job_post["city"]}, #{job_post["state"]}" if job_post.has_key?("city") and job_post.has_key?("state")%></li>
+              <li class="bold"><%= "#{job_post["company"]}" %>&nbsp;</li>
+              <li class="quiet"><%= "#{job_post["city"]}, #{job_post["state"]}" if hash_has_value?(job_post,"city") and hash_has_value?(job_post,"state")%></li>
             </ul>
             <div class="span-35 last" style="margin:5px 0">
-              <%= truncate(job_post["description"], :length => 230) %>
+              <%= truncate(strip_html(bbcode_to_html(job_post["description"].gsub(/<[^>]*>/,''))), :length => 230) if hash_has_value?(job_post,"description") %>
             </div>
             <ul class="column span-35 last horizontal_info_list quiet">
-              <li><%= "Posted #{time_ago_in_words(job_post["posted_on"].to_datetime)} ago" if job_post.has_key?("posted_on") %></li>
+              <li><%= "Posted #{time_ago_in_words(job_post["posted_on"].to_datetime)} ago" if hash_has_value?(job_post,"posted_on") %></li>
             </ul>
           </div>
         <%- end -%>
       </div>
-
-      <div class="span-35 last">
-        <div class="span-35 last append-bottom">
-          <div class="column inline_inputs right last">
-
-          </div>
-        </div>
-      </div>
-
-
     </div>
-
   </div>
 <%- else -%>
   <div class="span-35 push_text_center box2" style="background: transparent <%= asset_path('ic_magnifying.png') %> no-repeat center center; height: 250px">

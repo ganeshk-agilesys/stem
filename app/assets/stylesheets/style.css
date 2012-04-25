@@ -776,297 +776,297 @@ ul.horizontal_info_list li a:last-child:after {
 
 
 .scrollable {
-	float:left;
-	position:relative;
-	overflow:hidden;
-	width:486px;
-	height:100px;
-	border:1px solid #ccc;
-	background:url(welcome/scrollable_gradient.png) repeat-x
+    float:left;
+    position:relative;
+    overflow:hidden;
+    width:486px;
+    height:100px;
+    border:1px solid #ccc;
+    background:url(welcome/scrollable_gradient.png) repeat-x
 }
 .scrollable .items {
-	width:20000em;
-	position:absolute;
-	clear:both
+    width:20000em;
+    position:absolute;
+    clear:both
 }
 .items div {
-	float:left;
-	width:505px
+    float:left;
+    width:505px
 }
 .scrollable img {
-	float:left;
-	margin:10px 0 10px 10px;
-	background-color:#fff;
-	padding:2px;
-	border:1px solid #ccc;
-	width:100px;
-	height:75px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px
+    float:left;
+    margin:10px 0 10px 10px;
+    background-color:#fff;
+    padding:2px;
+    border:1px solid #ccc;
+    width:100px;
+    height:75px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px
 }
 .scrollable .active {
-	border:2px solid #000;
-	position:relative;
-	cursor:default
+    border:2px solid #000;
+    position:relative;
+    cursor:default
 }
 a.browse {
-	background:url(scrollable_buttons.png) no-repeat;
-	display:block;
-	width:30px;
-	height:30px;
-	float:left;
-	margin:40px 5px;
-	cursor:pointer;
-	font-size:1px
+    background:url(scrollable_buttons.png) no-repeat;
+    display:block;
+    width:30px;
+    height:30px;
+    float:left;
+    margin:40px 5px;
+    cursor:pointer;
+    font-size:1px
 }
 a.right {
-	background-position:0 -30px;
-	clear:right;
-	margin-right:0px
+    background-position:0 -30px;
+    clear:right;
+    margin-right:0px
 }
 a.right:hover {
-	background-position:-30px -30px
+    background-position:-30px -30px
 }
 a.right:active {
-	background-position:-60px -30px
+    background-position:-60px -30px
 }
 a.left {
-	margin-left:0px
+    margin-left:0px
 }
 a.left:hover {
-	background-position:-30px 0
+    background-position:-30px 0
 }
 a.left:active {
-	background-position:-60px 0
+    background-position:-60px 0
 }
 a.disabled {
-	visibility:hidden !important
+    visibility:hidden !important
 }
 div.scrollable_container {
-	height:120px;
-	margin-left:4px
+    height:120px;
+    margin-left:4px
 }
 .featured_companies>.scrollable {
-	width:950px;
-	height:110px;
-	background:none;
-	border:none
+    width:950px;
+    height:110px;
+    background:none;
+    border:none
 }
 .featured_companies .items div {
-	float:left;
-	width:115px;
-	margin-right:20px
+    float:left;
+    width:115px;
+    margin-right:20px
 }
 .featured_companies>.scrollable img {
-	float:left;
-	margin:10px 0 10px 15px;
-	padding:2px;
-	border:none;
-	width:115px;
-	height:75px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px
+    float:left;
+    margin:10px 0 10px 15px;
+    padding:2px;
+    border:none;
+    width:115px;
+    height:75px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px
 }
 
 div#content-top {
-	background:url(welcome/bg-container-top.jpg) bottom left no-repeat;
-	margin:15px auto 0 auto;
-	width:962px;
-	height:7px
+    background:url(welcome/bg-container-top.jpg) bottom left no-repeat;
+    margin:15px auto 0 auto;
+    width:962px;
+    height:7px
 }
 div#content {
-	background:url(welcome/bg-container-middle.jpg) top left repeat-y;
-	margin:0 auto;
-	padding:5px 0;
-	width:962px
+    background:url(welcome/bg-container-middle.jpg) top left repeat-y;
+    margin:0 auto;
+    padding:5px 0;
+    width:962px
 }
 div#content-bottom {
-	background:url(welcome/bg-container-bottom.jpg) top left no-repeat;
-	margin:0 auto;
-	width:962px;
-	height:7px
+    background:url(welcome/bg-container-bottom.jpg) top left no-repeat;
+    margin:0 auto;
+    width:962px;
+    height:7px
 }
 p.learn-more {
-	text-align:right;
-	margin-bottom:5px;
-	padding:0
+    text-align:right;
+    margin-bottom:5px;
+    padding:0
 }
 p.learn-more a {
-	text-decoration:none;
-	color:#0277ba;
-	font-size:90%;
-	font-weight:bold
+    text-decoration:none;
+    color:#0277ba;
+    font-size:90%;
+    font-weight:bold
 }
 p.learn-more a:hover {
-	text-decoration:underline
+    text-decoration:underline
 }
 div#header {
-	border-bottom:solid #578edf 6px
+    border-bottom:solid #578edf 6px
 }
 #slider {
-	width:938px;
-	margin:0 auto;
-	position:relative
+    width:938px;
+    margin:0 auto;
+    position:relative
 }
 #slider .scroll {
-	height:268px;
-	width:938px;
-	overflow:auto;
-	overflow-x:hidden;
-	position:relative;
-	clear:left;
-	background:#FFFFFF scroll left bottom
+    height:268px;
+    width:938px;
+    overflow:auto;
+    overflow-x:hidden;
+    position:relative;
+    clear:left;
+    background:#FFFFFF scroll left bottom
 }
 #slider .scrollContainer div.panel {
-	padding:20px;
-	height:268px;
-	width:928px
+    padding:20px;
+    height:268px;
+    width:928px
 }
 #slider ul.navigation {
-	background:url(welcome/slider-nav-bg.jpg) top left repeat-x;
-	height:38px
+    background:url(welcome/slider-nav-bg.jpg) top left repeat-x;
+    height:38px
 }
 #slider ul.navigation li {
-	display:inline-block;
-	background:url(welcome/bg-tabs.jpg) top left no-repeat;
-	background-position:-290px 0;
-	height:38px;
-	width:145px;
-	float:left
+    display:inline-block;
+    background:url(welcome/bg-tabs.jpg) top left no-repeat;
+    background-position:-290px 0;
+    height:38px;
+    width:145px;
+    float:left
 }
 #slider ul.navigation li:hover {
-	background:url(welcome/bg-tabs.jpg) top left no-repeat;
-	background-position:-145px 0
+    background:url(welcome/bg-tabs.jpg) top left no-repeat;
+    background-position:-145px 0
 }
 #slider ul.navigation a {
-	display:block;
-	padding:13px 0 13px 0;
-	text-align:center;
-	color:#fff;
-	text-decoration:none;
-	font-weight:bold
+    display:block;
+    padding:13px 0 13px 0;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold
 }
 #slider ul.navigation a.selected {
-	background:url(welcome/bg-tabs.jpg) top left no-repeat
+    background:url(welcome/bg-tabs.jpg) top left no-repeat
 }
 #slider ul.navigation a:focus {
-	outline:none
+    outline:none
 }
 #slider .scrollButtons {
-	position:absolute;
-	top:150px;
-	cursor:pointer
+    position:absolute;
+    top:150px;
+    cursor:pointer
 }
 #slider .scrollButtons.left {
-	left:-20px
+    left:-20px
 }
 #slider .scrollButtons.right {
-	right:-20px
+    right:-20px
 }
 #slider .hide {
-	display:none
+    display:none
 }
 #slider div.scrollContainer div#job-seekers {
-	background:url(welcome/slider-job-seekers-bg.jpg) top left no-repeat
+    background:url(welcome/slider-job-seekers-bg.jpg) top left no-repeat
 }
 #slider div.scrollContainer div#employers {
-	background:url(welcome/slider-employers-bg.jpg) top left no-repeat
+    background:url(welcome/slider-employers-bg.jpg) top left no-repeat
 }
 #slider div.scrollContainer div#educators {
-	background:url(welcome/slider-educators-bg.jpg) top left no-repeat
+    background:url(welcome/slider-educators-bg.jpg) top left no-repeat
 }
 #slider ul.sub-navigation {
-	background:url(welcome/slider-subnav-bg.jpg) top left repeat-x;
-	border-top:solid 1px #fff;
-	height:38px;
-	width:938px
+    background:url(welcome/slider-subnav-bg.jpg) top left repeat-x;
+    border-top:solid 1px #fff;
+    height:38px;
+    width:938px
 }
 #slider ul.sub-navigation li {
-	display:inline;
-	height:38px;
-	background:url(welcome/slider-subnav-divider.jpg) center right no-repeat;
-	padding:0px 85px;
-	float:left
+    display:inline;
+    height:38px;
+    background:url(welcome/slider-subnav-divider.jpg) center right no-repeat;
+    padding:0px 85px;
+    float:left
 }
 #slider ul.sub-navigation li.last {
-	padding-right:0;
-	background:none
+    padding-right:0;
+    background:none
 }
 #slider ul.sub-navigation li a {
-	display:block;
-	margin-top:13px;
-	text-decoration:none;
-	color:#fff;
-	font-weight:bold
+    display:block;
+    margin-top:13px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold
 }
 #slider ul.sub-navigation li a:hover {
-	text-decoration:underline
+    text-decoration:underline
 }
 #slider div.resources_label {
-	line-height:40px;
-	margin-right:20px
+    line-height:40px;
+    margin-right:20px
 }
 #slider ul.title {
-	margin:20px 0 0 15px
+    margin:20px 0 0 15px
 }
 #slider ul.title li.title {
-	font-size:250%;
-	font-weight:bold;
-	margin-bottom:15px
+    font-size:250%;
+    font-weight:bold;
+    margin-bottom:15px
 }
 #slider ul.title li.sub-title {
-	font-size:130%;
-	font-weight:bold;
+    font-size:130%;
+    font-weight:bold;
 }
 #slider span.action-title {
-	font-size:170%
+    font-size:170%
 }
 /*.video_player {padding:0px 0px 0px 12px;}*/
 div#video-player {
-	float:left;
-	width:625px;
-	margin:11px 0px 0px 11px;
-	padding:0px 0px 0px 12px;
+    float:left;
+    width:625px;
+    margin:11px 0px 0px 11px;
+    padding:0px 0px 0px 12px;
 }
 div#video-player div.ui-tabs-panel {
-	width:605px;
-	padding-top:15px
+    width:605px;
+    padding-top:15px
 }
 div#video-player div.ui-tabs-panel div.video-container {
-	height:315px;
-	margin:0 0 15px 20px
+    height:315px;
+    margin:0 0 15px 20px
 }
 div#video-player div.ui-tabs-panel a.video {
-	margin-right:2px
+    margin-right:2px
 }
 div#video-player div.ui-tabs-panel a.video:hover {
-	cursor:pointer
+    cursor:pointer
 }
 
 div#partners {
-	margin:0 0 0 12px;
-	color:#777
+    margin:0 0 0 12px;
+    color:#777
 }
 div#partners hr {
-	border:none 0;
-	border-top:2px solid #dcdcdc;
-	height:1px;
-	margin:7px -6px 15px
+    border:none 0;
+    border-top:2px solid #dcdcdc;
+    height:1px;
+    margin:7px -6px 15px
 }
 .ui-helper-reset {
-	font-size:90%
+    font-size:90%
 }
 .ui-widget-content{border: 0px !important;}
 .ui-icon {
-	display:block;
-	text-indent:-99999px;
-	overflow:hidden;
-	background-repeat:no-repeat
+    display:block;
+    text-indent:-99999px;
+    overflow:hidden;
+    background-repeat:no-repeat
 }
 .ui-tabs .ui-tabs-nav li {
-	height:20px;
-	background:#fff;
-      
+    height:20px;
+    background:#fff;
+
 }
 .ui-tabs .ui-tabs-panel {
     background: none repeat scroll 0 0 transparent;
@@ -1075,33 +1075,37 @@ div#partners hr {
     padding: 3px 10px;
 }
 .ui-tabs .ui-tabs-nav li:hover {
-	background:url("tab-mid.png") repeat-x scroll left top transparent;
+    background:url("tab-mid.png") repeat-x scroll left top transparent;
 }
 .ui-tabs .ui-tabs-nav li a {
-	font-weight:bold
+    font-weight:bold
 }
 .ui-tabs .ui-tabs-nav li a:hover {
-	color:#1574B6;
+    color:#1574B6;
 }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a:hover {
-	color:#1574B6;
-        background:url("tab-mid.png") repeat-x scroll left top transparent;
+    color:#1574B6;
+    background:url("tab-mid.png") repeat-x scroll left top transparent;
 }
 
 
-.nav ul .click {
- background:url(btn_left_08.png) right no-repeat;
+.nav ul .selected_menu {
+    background:url(btn_left_08.png) right no-repeat;
 }
 
-.nav ul .click a {
- background:url(btn_left_06.png) left no-repeat;
- height:24px;
- color:#666;
+.nav ul .selected_menu a {
+    background:url(btn_left_06.png) left no-repeat;
+    height:24px;
+    color:#666;
 }
 
-.nav ul .click a span  {
- background:url(nav_rpt.png) repeat-x;
- padding:6px 0px 6px;
+.nav ul .selected_menu a span  {
+    background:url(nav_rpt.png) repeat-x;
+    padding:6px 0px 6px;
 }
 
-
+.bottom_right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

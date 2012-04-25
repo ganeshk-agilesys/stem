@@ -24,11 +24,11 @@
           <% unless @industries.blank? %>
             <%- @industries.each do |industry| -%>
               <div class="span-11 append-bottom <%= cycle('', '', 'last') %>">
-                <div class="column"><%= image_tag industry["image_url"].gsub('normal','medium_small') %></div>
+                <div class="column"><%= industry_image(industry["image_url"],"medium_small") %></div>
                 <div class="span-9 last bold"><%= industry["name"] %></div>
                 <div class="span-9 last"> 
                   <%= link_to t(:career_paths), career_search_result_path(:search => { :industry_id => industry["id"] }), :title => t(:industry_alt_text, :industry_name => industry["name"]) %> |
-                  <%= link_to t(:learn_more), industry_path(industry), :title => t(:industry_alt_text, :industry_name => industry["name"]) %>
+                  <%= link_to t(:learn_more), industry_path(industry["id"]), :title => t(:industry_alt_text, :industry_name => industry["name"]) %>
                 </div>
               </div>
             <%- end -%>

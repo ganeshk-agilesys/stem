@@ -9,20 +9,11 @@
 <div class="span-44 last half_padding">
   <div id="details_tabs" style="clear: both;">
     <ul>
-      <li><a href="#details_tab-1"><span><%= h(t(:sample_tasks)) %></span></a></li>
-      <li><a href="#details_tab-2"><span><%= h(t(:knowledge)) %></span></a></li>
-      <li><a href="#details_tab-3"><span><%= h(t(:abilities)) %></span></a></li>
-      <li><a href="#details_tab-4"><span><%= h(t(:work_styles)) %></span></a></li>
+      <li><a href="#details_tab-1"><span><%= h(t(:knowledge)) %></span></a></li>
+      <li><a href="#details_tab-2"><span><%= h(t(:abilities)) %></span></a></li>
     </ul>
-    <div id="details_tab-1" class="span-43 last half_padding">
-      <ul>
-<%#- @occupation.tasks.each do |task| -%>
-        <li><span><%#= task %></span></li>
-<%#- end -%>
-      </ul>
-    </div>
-    <div id="details_tab-2" class="span-44 last half_padding">
-      <%- if @occupation.has_key?("knowledge")-%>
+    <div id="details_tab-1" class="span-44 last half_padding">
+      <%- if hash_has_value?(@occupation,"knowledge")-%>
         <%- for knowledge in @occupation["knowledge"] -%>
           <div class="span-42 last"><span><strong><%= knowledge["title"] %></strong></span></div>
           <div class="span-42 last"><span><%= t(:importance) %>: <%= stars_for(knowledge["stars"]) %></span></div>
@@ -31,8 +22,8 @@
         <%- end -%>
       <%- end -%>
     </div>
-    <div id="details_tab-3" class="span-43 last half_padding">
-      <%- if @occupation.has_key?("abilities")-%>
+    <div id="details_tab-2" class="span-43 last half_padding">
+      <%- if hash_has_value?(@occupation,"abilities")-%>
         <%- for ability in @occupation["abilities"] -%>
           <div class="span-42 last"><span><strong><%= ability["title"] %></strong></span></div>
           <div class="span-42 last"><span><%= t(:importance) %>: <%= stars_for(ability["stars"]) %></span></div>
@@ -40,11 +31,6 @@
           <hr class="column last prepend-top append-bottom medium" />
         <%- end -%>
       <%- end -%>
-    </div>
-    <div id="details_tab-4" class="span-43 last half_padding">
-<%#- for work_style in @occupation.work_styles -%>
-      <span><strong><%#= work_style.element_name %></strong> - <%#= work_style.description %></span><br />
-<%#- end -%>
     </div>
   </div>
 </div>

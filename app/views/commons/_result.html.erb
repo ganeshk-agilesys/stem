@@ -7,41 +7,37 @@
             <b><%= link_to occupation["title"],career_show_path(occupation["id"], :api_safe_onet_code => occupation["api_safe_onet_soc_code"])%></b>
           </span>
         </div>
-        <% if occupation.has_key?("average_national_salary") or occupation.has_key?("education_level") %>
+        <% if hash_has_value?(occupation,"average_national_salary") or hash_has_value?(occupation,"state_salaries")%>
           <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list bold">
-            <% if occupation.has_key?("average_national_salary")%>
+            <% if hash_has_value?(occupation,"average_national_salary")%>
               <li>Avg. National Salary: <%= number_to_currency(occupation["average_national_salary"], :precision => 0) %></li>
             <% end %>
 
-            <%- if occupation.has_key?("state_salaries") && params[:state_id].present? && occupation["state_salaries"].collect{|a| a["state"]}.index(params[:state_id]).present?-%>
+            <%- if hash_has_value?(occupation,"state_salaries") && params[:state_id].present? && occupation["state_salaries"].collect{|a| a["state"]}.index(params[:state_id]).present?-%>
               <li><%= t(:average)%> <%= params[:state_id] %> <%= t(:salary) %>: 
                 <%= number_to_currency((occupation["state_salaries"][occupation["state_salaries"].collect{|a| a["state"]}.index(params[:state_id])]["average_salary"]), :precision => 0) %></li>
             <%- end -%>      
-            <%- if occupation.has_key?("education_level_number") -%>
-              <li>Education: <%= occupation["education_level_number"] %></li>
-            <%- end -%>
           </ul>
         <% end %>
         <div style="margin:5px 0 0" class="span-35 last">
           <%= truncate(occupation["description"], :length => 250) %>
         </div>
-        <%- if occupation.has_key?("projected_national_openings") or occupation.has_key?("annual_national_growth") -%>
+        <%- if hash_has_value?(occupation,"projected_national_openings") or hash_has_value?(occupation,"annual_national_growth") -%>
           <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list quiet">
-            <%- if occupation.has_key?("projected_national_openings")-%>
+            <%- if hash_has_value?(occupation,"projected_national_openings")-%>
               <li>Projected Job Openings: <%= number_with_delimiter(occupation["projected_national_openings"], :precision => 0) %></li>
             <%- end -%>
-            <%- if occupation.has_key?("annual_national_growth") -%>
+            <%- if hash_has_value?(occupation,"annual_national_growth") -%>
               <li>Annual Growth Rate: <%= number_with_delimiter(occupation["annual_national_growth"], :precision => 0) %> %</li>
             <%- end -%>
           </ul>
         <%- end -%>
-        <%- if occupation.has_key?("industries") && occupation["industries"].present? -%>
+        <%- if hash_has_value?(occupation,"industries") -%>
           <ul style="margin:5px 0 0" class="column span-35 last horizontal_info_list quiet">
             <li>
               Industry:
               <%- occupation["industries"].each do |i| -%>
                 <%= link_to i["name"], "#" %>
-        <%#= link_to i["name"], i["published? ? industry_path(i) : industry_path(i.parent_industry) %>
               <%- end -%>
             </li>
           </ul>  

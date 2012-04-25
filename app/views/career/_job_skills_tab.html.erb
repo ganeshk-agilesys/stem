@@ -12,7 +12,7 @@
   </div>
    <div class="clear"></div>
 
-  <%- if @occupation.has_key?("skills")-%>
+  <%- if hash_has_value?(@occupation,"skills")-%>
     <%- @occupation["skills"].each do |skill| -%>
       <div class="span-45 last prepend-top box2 skill_section">
         <div class="span-44-1 box_grey half_padding" style="font-size: 13px;">
