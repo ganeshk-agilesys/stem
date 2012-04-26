@@ -32,10 +32,10 @@
     <div >
       <%= industry_image(@industry["image_url"],"large") %>
     </div>
-    <div >
+    <div>
       <h2 class="signup"><%= @industry["name"] %></h2>
       <%- if hash_has_value?(@industry,"description") -%>
-        <p><%= @industry["description"] %></p>
+        <p><%= @industry["description"].bbcode_to_html %></p>
       <%- end -%>
     </div>
     <%if hash_has_value?(@industry,"education")%>
@@ -43,11 +43,8 @@
         <h2 class="signup">
           <%= t(:industry_education) %>
         </h2>
-        <p>
-          <%= markdown(@industry["education"])%>
-        </p>
+        <div class="span-16 industry_education"><%= markdown(@industry["education"])%></div>
       </div>
     <% end %>
   </div>
 </div>
-<%#= render :partial => '/industries/company_logos' %>

@@ -1109,3 +1109,17 @@ div#partners hr {
     bottom: 0;
     right: 0;
 }
+
+.box_light_grey{
+    background-color: #F0F0F0;
+    border: 1px solid #E2E2E2;
+}   
+
+.industry_education ul{
+    margin-left: 15px;
+}
+
+.industry_education ul li{
+    list-style-type: disc;
+}
+

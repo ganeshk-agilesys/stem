@@ -3,12 +3,12 @@
   <!--Navigation starts-->
   <div class="nav" id="main_menu">
     <ul>
-      <li class="selected_menu1"><a href="<%= root_path %>"><span>Home</span></a></li>
-      <li class="selected_menu2"><a href="/static/about"><span>About</span></a></li>
-      <li class="selected_menu3"><a href="<%= assessment_index_path %>"><span>Assess Yourself</span></a></li>
-      <li class="selected_menu4"><a href="<%= career_search_path %>"><span>Careers</span></a></li>
-      <li class="selected_menu5"><a href="/static/resources"><span>Resources</span></a></li>
-      <li class="selected_menu6"><a href="<%= job_search_path %>"><span>Jobs</span></a></li>
+      <li class="<%= choose_class('home',params[:controller]) %>"><a href="<%= root_path %>"><span>Home</span></a></li>
+      <li class="<%= choose_static_class('about',params[:action]) %>"><a href="/static/about"><span>About</span></a></li>
+      <li class="<%= choose_class('assessment',params[:controller]) %>"><a href="<%= assessment_index_path %>"><span>Assess Yourself</span></a></li>
+      <li class="<%= choose_class('career',params[:controller]) %>"><a href="<%= career_search_path %>"><span>Careers</span></a></li>
+      <li class="<%= choose_static_class('resources',params[:action]) %>"><a href="/static/resources"><span>Resources</span></a></li>
+      <li class="<%= choose_class('job',params[:controller]) %>"><a href="<%= job_search_path %>"><span>Jobs</span></a></li>
     </ul>
   </div>
 </div>

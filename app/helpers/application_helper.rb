@@ -102,4 +102,13 @@ module ApplicationHelper
   def hash_has_value?(hash={},key)
     hash.has_key?(key) && hash["#{key}"].present?
   end
+  
+  def choose_class(menu_name,controller_name)
+      (menu_name == controller_name) ? 'selected_menu' : ''
+  end
+  
+  def choose_static_class(menu_name,action_name)
+      (menu_name == action_name) ? 'selected_menu' : ''
+  end
+  
 end

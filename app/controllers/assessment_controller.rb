@@ -1,7 +1,6 @@
 class AssessmentController < ApplicationController
   def index
-    response = open URI.escape("http://usmilitarypipeline.com/api/v1/assessment.json")
-    @questions = JSON.parse(response.read)
+    @questions = parse_json("http://usmilitarypipeline.com/api/v1/assessment.json")
     @assessment = ""
   end
   
@@ -15,7 +14,7 @@ class AssessmentController < ApplicationController
     if @riasec =~ /^[1-5]{6}$/ and @skills =~ /^[1-5]{8}$/
       redirect_to career_assessment_result_path(:riasec => @riasec, :skills => @skills)
     else
-      @questions = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/assessment.json")).read)
+      @questions = parse_json("http://usmilitarypipeline.com/api/v1/assessment.json")
       flash.now[:notice] = "Please answer all questions"
       render :action => 'index'
     end

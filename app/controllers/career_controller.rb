@@ -1,6 +1,6 @@
 class CareerController < ApplicationController
   def search
-    @industries = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read)    
+    @industries = parse_json("http://usmilitarypipeline.com/api/v1/industries.json")    
   end
    
   def search_result
@@ -8,13 +8,13 @@ class CareerController < ApplicationController
     params[:search][:sort] ||= 'national_salary'
     query_string = api_safe_params("search",params[:search])
     params[:q].present? ? q = "q=#{params[:q]}"+"&" : q = ''
-    @industries = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read).collect{|a| [a["name"],a["id"]]}
-    @search_result= JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/search.json?#{q}#{query_string}")).read)
+    @industries = parse_json("http://usmilitarypipeline.com/api/v1/industries.json").collect{|a| [a["name"],a["id"]]}
+    @search_result= parse_json("http://usmilitarypipeline.com/api/v1/careers/search.json?#{q}#{query_string}")
     
     @occupations = []
     unless @search_result.blank?
       @search_result.each do |o|
-        @occupations << JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")).read)
+        @occupations << parse_json("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")
       end
     end
   end
@@ -26,20 +26,19 @@ class CareerController < ApplicationController
     params[:search][:riasec] = riasec
     params[:search][:skills] = skills
     query_string = api_safe_params("search",params[:search])
-    @industries = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/industries.json")).read).collect{|a| [a["name"],a["id"]]}
-    @assessment_result = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/search.json?#{query_string}")).read)
+    @industries = parse_json("http://usmilitarypipeline.com/api/v1/industries.json").collect{|a| [a["name"],a["id"]]}
+    @assessment_result = parse_json("http://usmilitarypipeline.com/api/v1/careers/search.json?#{query_string}")
     
     @occupations = []
     unless @assessment_result.blank?
       @assessment_result.each do |o|
-        @occupations << JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")).read)
+        @occupations << parse_json("http://usmilitarypipeline.com/api/v1/careers/#{o["api_safe_onet_soc_code"]}.json")
       end
     end
-    #    raise @occupations.inspect
   end
   
   def show
-    @occupation  = JSON.parse(open(URI.escape("http://usmilitarypipeline.com/api/v1/careers/#{params[:api_safe_onet_code]}.json")).read) rescue []
+    @occupation  = parse_json("http://usmilitarypipeline.com/api/v1/careers/#{params[:api_safe_onet_code]}.json")
   end
 
 end
